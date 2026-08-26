@@ -1,0 +1,266 @@
+:root {
+    --primary-burgundy: #7A1C28;
+    --dark-burgundy: #4A0E17;
+    --accent-red: #8B1E2D;
+    --text-light: #FFFFFF;
+    --text-muted: #E2D1D4;
+    --card-bg: #FAF8F5;
+    --card-text: #2B2B2B;
+    --border-color: #E5DCD8;
+    --font-heading: 'Merriweather', serif;
+    --font-body: 'Plus Jakarta Sans', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    min-height: 100vh;
+    background-color: var(--dark-burgundy);
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-wrapper {
+    position: relative;
+    width: 100vw;
+    min-height: 100vh;
+    /* Remplazar url por tu imagen de fondo del colegio */
+    background: url('colegio-bg.jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bg-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        135deg, 
+        rgba(90, 15, 26, 0.92) 0%, 
+        rgba(50, 8, 14, 0.88) 100%
+    );
+    z-index: 1;
+}
+
+.login-container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1200px;
+    padding: 40px;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 60px;
+    align-items: center;
+}
+
+/* --- Branding Izquierdo --- */
+.brand-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.logo-circle {
+    width: 110px;
+    height: 110px;
+    background: #FFFFFF;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    padding: 12px;         /* Espacio interno para recortar los bordes */
+    overflow: hidden;      /* Mantiene la imagen dentro del círculo */
+    flex-shrink: 0;
+}
+
+.logo-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;   /* Escala el logo completito sin deformarlo */
+    border-radius: 50%;
+}
+.subheading {
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #E2A8B0;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+.main-title {
+    font-family: var(--font-heading);
+    font-size: 2.75rem;
+    line-height: 1.2;
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+
+.description {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+    max-width: 500px;
+    margin-bottom: 32px;
+}
+
+.location-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    opacity: 0.9;
+}
+
+/* --- Tarjeta de Login (Derecha) --- */
+.card-section {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.login-card {
+    background-color: var(--card-bg);
+    color: var(--card-text);
+    width: 100%;
+    max-width: 420px;
+    padding: 36px 32px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.card-tag {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--primary-burgundy);
+}
+
+.school-icon {
+    width: 32px;
+    height: 32px;
+    background: #F3ECE8;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-title {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    color: #1A1A1A;
+    margin-bottom: 28px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.form-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #4A4A4A;
+}
+
+.select-wrapper select {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 0.95rem;
+    font-family: var(--font-body);
+    color: #333;
+    background-color: #FFFFFF;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    outline: none;
+    cursor: pointer;
+    transition: border-color 0.2s ease;
+}
+
+.select-wrapper select:focus {
+    border-color: var(--primary-burgundy);
+}
+
+.btn-submit {
+    margin-top: 8px;
+    width: 100%;
+    padding: 12px;
+    background-color: var(--primary-burgundy);
+    color: #FFFFFF;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-submit:hover {
+    background-color: var(--accent-red);
+}
+
+.btn-submit:active {
+    transform: scale(0.99);
+}
+
+.card-footer-text {
+    margin-top: 24px;
+    font-size: 0.75rem;
+    text-align: center;
+    color: #777;
+}
+
+.submit-btn {
+    width: 100%;
+    background-color: #801B2B; /* Color guinda del diseño */
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 0;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    display: block;
+    margin-top: 15px;
+}
+
+.submit-btn:hover {
+    background-color: #661522; /* Color un poco más oscuro al pasar el cursor */
+}
+
+/* Responsividad */
+@media (max-width: 900px) {
+    .login-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .card-section {
+        justify-content: center;
+    }
+
+    .main-title {
+        font-size: 2.1rem;
+    }
+}

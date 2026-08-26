@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduBethania - Resumen General</title>
+    <!-- Google Fonts & Iconos de Lucide -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+    <div class="app-layout">
+        <!-- BARRA LATERAL (SIDEBAR) -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="brand-logo">
+                    <i data-lucide="graduation-cap" class="brand-icon"></i>
+                    <div>
+                        <h2 class="brand-title">EduBethania</h2>
+                        <span class="brand-subtitle">Sistema Académico</span>
+                    </div>
+                </div>
+
+                <div class="profile-selector-box">
+                    <label class="profile-label">Perfil demostrativo</label>
+                    <select class="profile-select">
+                        <option value="Administración" selected>Administración</option>
+                        <option value="Secretaría">Secretaría</option>
+                        <option value="Docente">Docente</option>
+                        <option value="Tutor">Tutor</option>
+                    </select>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active">
+                    <i data-lucide="layout-grid"></i>
+                    <span>Panel principal</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i data-lucide="users"></i>
+                    <span>Estudiantes y tutores</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i data-lucide="file-check"></i>
+                    <span>Matrícula y documentos</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i data-lucide="wallet"></i>
+                    <span>Caja y pagos</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i data-lucide="sliders"></i>
+                    <span>Configuración académica</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i data-lucide="monitor-play"></i>
+                    <span>Carga docente</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i data-lucide="award"></i>
+                    <span>Calificaciones</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i data-lucide="heart"></i>
+                    <span>Portal tutor</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <p>Colegio Evangélico Bethania · San Pedro de Macorís</p>
+            </div>
+        </aside>
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <main class="main-content">
+            <!-- CABECERA DE LA PÁGINA -->
+            <header class="top-header">
+                <div>
+                    <span class="period-tag">AÑO ESCOLAR 2026–2027</span>
+                    <h1 class="page-title">Resumen general</h1>
+                </div>
+                <div class="header-meta">
+                    <span class="current-date">martes, 25 de agosto de 2026</span>
+                    <span class="view-tag">Vista de Administración</span>
+                </div>
+            </header>
+
+            <!-- BIENVENIDA Y BOTÓN PRINCIPAL -->
+            <section class="welcome-bar">
+                <div>
+                    <h2 class="welcome-title">Buenos días, equipo Bethania</h2>
+                    <p class="welcome-desc">Una vista clara del proceso de matrícula, la documentación y la gestión académica del período vigente.</p>
+                </div>
+                <button class="btn-primary">
+                    <i data-lucide="user-plus"></i>
+                    <span>Registrar estudiante</span>
+                </button>
+            </section>
+
+            <!-- TARJETAS DE MÉTRICAS (KPIs) -->
+            <section class="kpi-grid">
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <span class="kpi-title">Estudiantes activos</span>
+                        <i data-lucide="graduation-cap" class="kpi-icon"></i>
+                    </div>
+                    <div class="kpi-value">4</div>
+                    <span class="kpi-subtext subtext-green">+3 este período</span>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <span class="kpi-title">Matrículas creadas</span>
+                        <i data-lucide="clipboard-list" class="kpi-icon"></i>
+                    </div>
+                    <div class="kpi-value">4</div>
+                    <span class="kpi-subtext subtext-brown">2 por confirmar</span>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <span class="kpi-title">Pagos recibidos</span>
+                        <i data-lucide="dollar-sign" class="kpi-icon icon-green"></i>
+                    </div>
+                    <div class="kpi-value">RD$17,000</div>
+                    <span class="kpi-subtext subtext-green">Ingresos registrados</span>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <span class="kpi-title">Documentos pendientes</span>
+                        <i data-lucide="file-text" class="kpi-icon"></i>
+                    </div>
+                    <div class="kpi-value">2</div>
+                    <span class="kpi-subtext subtext-brown">Expedientes incompletos</span>
+                </div>
+            </section>
+
+            <!-- SECCIÓN INFERIOR (TABLA Y ACCIONES RÁPIDAS) -->
+            <div class="dashboard-grid">
+                <!-- TABLA MATRÍCULAS RECIENTES -->
+                <section class="content-card table-section">
+                    <div class="card-header">
+                        <h3 class="card-title">Matrículas recientes</h3>
+                        <a href="#" class="link-action">Ver matrículas</a>
+                    </div>
+                    
+                    <div class="table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>ESTUDIANTE</th>
+                                    <th>SECCIÓN</th>
+                                    <th>TIPO</th>
+                                    <th>ESTADO</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="font-bold">José Alejandro Díaz</td>
+                                    <td>5to B</td>
+                                    <td>Nueva</td>
+                                    <td><span class="badge badge-warning">Pendiente</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="font-bold">Camila Núñez</td>
+                                    <td>5to B</td>
+                                    <td>Reinscripción</td>
+                                    <td><span class="badge badge-success">Confirmada</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="font-bold">Luis Manuel Reyes</td>
+                                    <td>4to A</td>
+                                    <td>Nueva</td>
+                                    <td><span class="badge badge-warning">Pendiente</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="font-bold">Sofía Martínez</td>
+                                    <td>4to A</td>
+                                    <td>Reinscripción</td>
+                                    <td><span class="badge badge-success">Confirmada</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- ACCIONES RÁPIDAS -->
+                <section class="content-card quick-actions-section">
+                    <div class="card-header-simple">
+                        <h3 class="card-title">Acciones rápidas</h3>
+                        <p class="card-subtitle">Accede a los procesos administrativos más utilizados durante la jornada.</p>
+                    </div>
+
+                    <div class="actions-list">
+                        <button class="btn-action">
+                            <span>Registrar cobro</span>
+                        </button>
+                        <button class="btn-action">
+                            <i data-lucide="pencil"></i>
+                            <span>Registrar calificaciones</span>
+                        </button>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Inicializar Iconos de Lucide -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
