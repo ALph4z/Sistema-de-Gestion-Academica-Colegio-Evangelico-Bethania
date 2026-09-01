@@ -187,7 +187,6 @@ CREATE TABLE calificaciones (
 
 INSERT INTO roles (nombre_rol) VALUES
 ('Administrador'),
-('Secretaría'),
 ('Docente'),
 ('Tutor');
 
