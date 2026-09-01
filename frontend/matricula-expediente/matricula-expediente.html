@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EduBethania - Matrícula y expediente</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Funcion -->
+    <script src="matricula-expediente.js"> </script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="matricula-expediente.css">
+</head>
+
+<body>
+
+    <div class="app-layout">
+
+        <!-- =====================================================
+             SIDEBAR
+             ===================================================== -->
+        <aside class="sidebar">
+
+            <div class="sidebar-header">
+
+                <!-- LOGO -->
+                <div class="brand-logo">
+                    <i data-lucide="graduation-cap" class="brand-icon"></i>
+
+                    <div>
+                        <h2 class="brand-title">EduBethania</h2>
+                        <span class="brand-subtitle">Sistema Académico</span>
+                    </div>
+                </div>
+
+                <!-- SELECTOR DE PERFIL -->
+                <div class="profile-selector-box">
+
+                    <label class="profile-label">
+                        Perfil demostrativo
+                    </label>
+
+                    <select class="profile-select">
+                        <option value="Administración" selected>
+                            Administración
+                        </option>
+
+                        <option value="Secretaría">
+                            Secretaría
+                        </option>
+
+                        <option value="Docente">
+                            Docente
+                        </option>
+
+                        <option value="Tutor">
+                            Tutor
+                        </option>
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- MENÚ -->
+            <nav class="sidebar-nav">
+
+                <a href="#" class="nav-item">
+                    <i data-lucide="layout-grid"></i>
+                    <span>Panel principal</span>
+                </a>
+
+                <a href="#" class="nav-item">
+                    <i data-lucide="users"></i>
+                    <span>Estudiantes y tutores</span>
+                </a>
+
+                <a href="#" class="nav-item active">
+                    <i data-lucide="file-check"></i>
+                    <span>Matrícula y documentos</span>
+                </a>
+
+                <a href="#" class="nav-item">
+                    <i data-lucide="wallet"></i>
+                    <span>Caja y pagos</span>
+                </a>
+
+                <a href="#" class="nav-item">
+                    <i data-lucide="sliders"></i>
+                    <span>Configuración académica</span>
+                </a>
+
+                <a href="#" class="nav-item">
+                    <i data-lucide="monitor-play"></i>
+                    <span>Carga docente</span>
+                </a>
+
+                <a href="#" class="nav-item">
+                    <i data-lucide="award"></i>
+                    <span>Calificaciones</span>
+                </a>
+
+                <a href="#" class="nav-item">
+                    <i data-lucide="heart"></i>
+                    <span>Portal tutor</span>
+                </a>
+
+                <!-- CERRAR SESIÓN -->
+                <a href="#" class="nav-item logout-item">
+                    <i data-lucide="log-out"></i>
+                    <span>Cerrar sesión</span>
+                </a>
+
+            </nav>
+
+
+            <!-- FOOTER SIDEBAR -->
+            <div class="sidebar-footer">
+                <p>
+                    Colegio Evangélico Bethania · San Pedro<br>
+                    de Macorís
+                </p>
+            </div>
+
+        </aside>
+
+
+        <!-- =====================================================
+             CONTENIDO PRINCIPAL
+             ===================================================== -->
+        <main class="main-content">
+
+            <!-- HEADER SUPERIOR -->
+            <header class="top-header">
+
+                <div>
+                    <span class="period-tag">
+                        AÑO ESCOLAR 2026–2027
+                    </span>
+
+                    <h1 class="page-title">
+                        Matrícula y expediente
+                    </h1>
+                </div>
+
+
+                <div class="header-meta">
+
+                    <span class="current-date">
+                        domingo, 30 de agosto de 2026
+                    </span>
+
+                    <span class="view-tag">
+                        Vista de Administración
+                    </span>
+
+                </div>
+
+            </header>
+
+
+            <!-- =================================================
+                 CONTENIDO DE MATRÍCULA
+                 ================================================= -->
+
+            <section class="enrollment-content">
+
+                <!-- ENCABEZADO DE LA SECCIÓN -->
+                <div class="enrollment-header">
+
+                    <div>
+                        <h2 class="enrollment-title">
+                            Matrícula y expediente
+                        </h2>
+
+                        <p class="enrollment-description">
+                            Mantén actualizadas las nuevas reinscripciones,
+                            carga y documentación requerida.
+                        </p>
+                    </div>
+
+
+                    <button class="btn-primary new-enrollment-btn">
+                        <i data-lucide="plus"></i>
+                        <span>Nueva matrícula</span>
+                    </button>
+
+                </div>
+
+
+                <!-- GRID PRINCIPAL -->
+                <div class="enrollment-grid">
+
+                    <!-- =================================================
+                         TABLA DE MATRÍCULAS
+                         ================================================= -->
+                    <section class="content-card enrollment-table-card">
+
+                        <div class="table-container">
+
+                            <table class="data-table enrollment-table">
+
+                                <thead>
+                                    <tr>
+                                        <th>ESTUDIANTE</th>
+                                        <th>SECCIÓN</th>
+                                        <th>TIPO</th>
+                                        <th>ESTADO</th>
+                                        <th>ACCIÓN</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+
+                                    <tr>
+                                        <td class="font-bold">
+                                            José Alejandro Díaz
+                                        </td>
+
+                                        <td>
+                                            5to B
+                                        </td>
+
+                                        <td>
+                                            Nueva
+                                        </td>
+
+                                        <td>
+                                            <span class="badge badge-warning">
+                                                Pendiente
+                                            </span>
+                                        </td>
+
+                                        <td>
+                                            <button class="btn-view">
+                                                Ver
+                                            </button>
+                                        </td>
+                                    </tr>
+
+
+                                    <tr>
+                                        <td class="font-bold">
+                                            Camila Núñez
+                                        </td>
+
+                                        <td>
+                                            5to B
+                                        </td>
+
+                                        <td>
+                                            Reinscripción
+                                        </td>
+
+                                        <td>
+                                            <span class="badge badge-success">
+                                                Confirmada
+                                            </span>
+                                        </td>
+
+                                        <td>
+                                            <button class="btn-view">
+                                                Ver
+                                            </button>
+                                        </td>
+                                    </tr>
+
+
+                                    <tr>
+                                        <td class="font-bold">
+                                            Luis Manuel Reyes
+                                        </td>
+
+                                        <td>
+                                            4to A
+                                        </td>
+
+                                        <td>
+                                            Nueva
+                                        </td>
+
+                                        <td>
+                                            <span class="badge badge-warning">
+                                                Pendiente
+                                            </span>
+                                        </td>
+
+                                        <td>
+                                            <button class="btn-view">
+                                                Ver
+                                            </button>
+                                        </td>
+                                    </tr>
+
+
+                                    <tr>
+                                        <td class="font-bold">
+                                            Sofía Martínez
+                                        </td>
+
+                                        <td>
+                                            4to A
+                                        </td>
+
+                                        <td>
+                                            Reinscripción
+                                        </td>
+
+                                        <td>
+                                            <span class="badge badge-success">
+                                                Confirmada
+                                            </span>
+                                        </td>
+
+                                        <td>
+                                            <button class="btn-view">
+                                                Ver
+                                            </button>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- =================================================
+                         CHECKLIST DEL EXPEDIENTE
+                         ================================================= -->
+                    <section class="content-card checklist-card">
+
+                        <div class="checklist-header">
+
+                            <h3 class="card-title">
+                                Checklist de expediente
+                            </h3>
+
+                            <p class="card-subtitle">
+                                Marca los documentos recibidos para confirmar
+                                la matrícula.
+                            </p>
+
+                        </div>
+
+
+                        <!-- ESTUDIANTE SELECCIONADO -->
+                        <div class="selected-student-name">
+                            José Alejandro Díaz
+                        </div>
+
+
+                        <!-- DOCUMENTOS -->
+                        <div class="document-list">
+
+                            <label class="document-item">
+                                <input type="checkbox">
+                                <span>
+                                    Acta de nacimiento
+                                </span>
+                            </label>
+
+
+                            <label class="document-item">
+                                <input type="checkbox">
+                                <span>
+                                    Fotos de carnet
+                                </span>
+                            </label>
+
+
+                            <label class="document-item">
+                                <input type="checkbox">
+                                <span>
+                                    Carta de buena conducta
+                                </span>
+                            </label>
+
+
+                            <label class="document-item">
+                                <input type="checkbox">
+                                <span>
+                                    Boletín anterior
+                                </span>
+                            </label>
+
+
+                            <label class="document-item">
+                                <input type="checkbox">
+                                <span>
+                                    Certificado médico
+                                </span>
+                            </label>
+
+                        </div>
+
+
+                        <!-- CONTADOR -->
+                        <p class="documents-counter">
+                            0 de 5 documentos recibidos
+                        </p>
+
+
+                        <!-- CONFIRMAR -->
+                        <button class="btn-confirm">
+                            Confirmar matrícula
+                        </button>
+
+                    </section>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- INICIALIZAR ICONOS -->
+    <script>
+
+        lucide.createIcons();
+
+    </script>
+
+    </script>
+
+</body>
+
+</html>
