@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EduBethania - Estudiantes y tutores</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Lucide -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="estudiantes-tutores.css">
+</head>
+
+<body>
+
+<div class="app-layout">
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+    <aside class="sidebar">
+
+        <div class="sidebar-header">
+
+            <!-- LOGO -->
+            <div class="brand-logo">
+                <i data-lucide="graduation-cap" class="brand-icon"></i>
+
+                <div>
+                    <h2 class="brand-title">EduBethania</h2>
+                    <span class="brand-subtitle">Sistema Académico</span>
+                </div>
+            </div>
+
+            <!-- SELECTOR DE PERFIL -->
+            <div class="profile-selector-box">
+
+                <label class="profile-label">
+                    Perfil demostrativo
+                </label>
+
+                <select class="profile-select">
+                    <option value="Administración" selected>
+                        Administración
+                    </option>
+
+                    <option value="Secretaría">
+                        Secretaría
+                    </option>
+
+                    <option value="Docente">
+                        Docente
+                    </option>
+
+                    <option value="Tutor">
+                        Tutor
+                    </option>
+                </select>
+
+            </div>
+
+        </div>
+
+
+        <!-- MENÚ -->
+        <nav class="sidebar-nav">
+
+            <a href="#" class="nav-item">
+                <i data-lucide="layout-grid"></i>
+                <span>Panel principal</span>
+            </a>
+
+            <a href="#" class="nav-item active">
+                <i data-lucide="users"></i>
+                <span>Estudiantes y tutores</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <i data-lucide="file-check"></i>
+                <span>Matrícula y documentos</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <i data-lucide="wallet"></i>
+                <span>Caja y pagos</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <i data-lucide="sliders"></i>
+                <span>Configuración académica</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <i data-lucide="monitor-play"></i>
+                <span>Carga docente</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <i data-lucide="award"></i>
+                <span>Calificaciones</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <i data-lucide="heart"></i>
+                <span>Portal tutor</span>
+            </a>
+
+            <a href="#" class="nav-item logout-item">
+                <i data-lucide="log-out"></i>
+                <span>Cerrar sesión</span>
+            </a>
+
+        </nav>
+
+
+        <!-- FOOTER -->
+        <div class="sidebar-footer">
+            <p>
+                Colegio Evangélico Bethania · San Pedro de Macorís
+            </p>
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================================
+         CONTENIDO PRINCIPAL
+    ====================================================== -->
+    <main class="main-content">
+
+        <!-- HEADER EXACTAMENTE COMO EL DASHBOARD -->
+        <header class="top-header">
+
+            <div>
+
+                <span class="period-tag">
+                    AÑO ESCOLAR 2026–2027
+                </span>
+
+                <h1 class="page-title">
+                    Estudiantes y tutores
+                </h1>
+
+            </div>
+
+
+            <div class="header-meta">
+
+                <span class="current-date">
+                    martes, 25 de agosto de 2026
+                </span>
+
+                <span class="view-tag">
+                    Vista de Administración
+                </span>
+
+            </div>
+
+        </header>
+
+
+        <!-- =================================================
+             ENCABEZADO DE ESTUDIANTES
+        ================================================== -->
+        <section class="students-header">
+
+            <div class="students-heading">
+
+                <p class="students-description">
+                    Registro de todos los estudiantes activos y detalle de sus documentos.
+                </p>
+
+            </div>
+
+
+            <button class="btn-primary">
+
+                <i data-lucide="user-plus"></i>
+
+                <span>
+                    Nuevo estudiante
+                </span>
+
+            </button>
+
+        </section>
+
+
+        <!-- =================================================
+             BUSCADOR
+        ================================================== -->
+        <section class="students-tools">
+
+            <div class="search-box">
+
+                <i data-lucide="search"></i>
+
+                <input
+                    type="text"
+                    placeholder="Buscar estudiante o sección..."
+                >
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             TABLA
+        ================================================== -->
+        <section class="content-card students-card">
+
+            <div class="card-header">
+
+                <div>
+
+                    <h3 class="card-title">
+                        Registro de estudiantes
+                    </h3>
+
+                    <p class="card-subtitle">
+                        Consulta y administra la información académica de los estudiantes.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="table-container">
+
+                <table class="data-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>ESTUDIANTE</th>
+                            <th>TUTOR</th>
+                            <th>SECCIÓN</th>
+                            <th>TELÉFONO</th>
+                            <th>DOCUMENTOS</th>
+                            <th>ACCIONES</th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+                        <tr>
+
+                            <td>
+                                <div class="student-cell">
+
+                                    <div class="student-avatar">
+                                        SM
+                                    </div>
+
+                                    <span class="font-bold">
+                                        Sofía Martínez
+                                    </span>
+
+                                </div>
+                            </td>
+
+                            <td>
+                                María Pérez
+                            </td>
+
+                            <td>
+                                4to A
+                            </td>
+
+                            <td>
+                                809-555-1010
+                            </td>
+
+                            <td>
+                                <span class="document-badge document-warning">
+                                    Sin documentos
+                                </span>
+                            </td>
+
+                            <td>
+
+                                <div class="action-buttons">
+
+                                    <button class="btn-edit">
+                                        Editar
+                                    </button>
+
+                                    <button class="btn-delete">
+                                        Eliminar
+                                    </button>
+
+                                </div>
+
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                <div class="student-cell">
+
+                                    <div class="student-avatar">
+                                        LM
+                                    </div>
+
+                                    <span class="font-bold">
+                                        Luis Manuel Reyes
+                                    </span>
+
+                                </div>
+                            </td>
+
+                            <td>
+                                Manuel Reyes
+                            </td>
+
+                            <td>
+                                4to A
+                            </td>
+
+                            <td>
+                                809-555-1075
+                            </td>
+
+                            <td>
+                                <span class="document-badge document-warning">
+                                    Sin documentos
+                                </span>
+                            </td>
+
+                            <td>
+
+                                <div class="action-buttons">
+
+                                    <button class="btn-edit">
+                                        Editar
+                                    </button>
+
+                                    <button class="btn-delete">
+                                        Eliminar
+                                    </button>
+
+                                </div>
+
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                <div class="student-cell">
+
+                                    <div class="student-avatar">
+                                        CN
+                                    </div>
+
+                                    <span class="font-bold">
+                                        Camila Núñez
+                                    </span>
+
+                                </div>
+                            </td>
+
+                            <td>
+                                Rosa Núñez
+                            </td>
+
+                            <td>
+                                5to B
+                            </td>
+
+                            <td>
+                                809-555-1090
+                            </td>
+
+                            <td>
+                                <span class="document-badge document-success">
+                                    Con documentos
+                                </span>
+                            </td>
+
+                            <td>
+
+                                <div class="action-buttons">
+
+                                    <button class="btn-edit">
+                                        Editar
+                                    </button>
+
+                                    <button class="btn-delete">
+                                        Eliminar
+                                    </button>
+
+                                </div>
+
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                <div class="student-cell">
+
+                                    <div class="student-avatar">
+                                        JA
+                                    </div>
+
+                                    <span class="font-bold">
+                                        José Alejandro Díaz
+                                    </span>
+
+                                </div>
+                            </td>
+
+                            <td>
+                                Ana Díaz
+                            </td>
+
+                            <td>
+                                5to B
+                            </td>
+
+                            <td>
+                                809-555-1002
+                            </td>
+
+                            <td>
+                                <span class="document-badge document-warning">
+                                    Sin documentos
+                                </span>
+                            </td>
+
+                            <td>
+
+                                <div class="action-buttons">
+
+                                    <button class="btn-edit">
+                                        Editar
+                                    </button>
+
+                                    <button class="btn-delete">
+                                        Eliminar
+                                    </button>
+
+                                </div>
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- INICIALIZAR LUCIDE -->
+<script>
+    lucide.createIcons();
+</script>
+
+</body>
+</html>
