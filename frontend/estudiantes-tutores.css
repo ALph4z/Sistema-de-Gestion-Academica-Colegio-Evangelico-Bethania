@@ -1,0 +1,532 @@
+:root {
+    --sidebar-bg: #6A1823;
+    --sidebar-hover: #7F1D2B;
+    --sidebar-active: #8C2231;
+    --main-bg: #ffffff;
+    --card-bg: #FFFFFF;
+    --text-dark: #2B2B2B;
+    --text-muted: #6E6E6E;
+    --brand-burgundy: #7A1C28;
+    --border-color: #E8E2DD;
+    --badge-success-bg: #E3F6EC;
+    --badge-success-text: #1B7A43;
+    --badge-warning-bg: #FEF3D6;
+    --badge-warning-text: #8A6100;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+    background-color: var(--main-bg);
+    color: var(--text-dark);
+    min-height: 100vh;
+}
+
+.app-layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+
+/* =========================================================
+   SIDEBAR
+   ORIGINAL DEL DASHBOARD
+========================================================= */
+
+.sidebar {
+    width: 260px;
+    background-color: var(--sidebar-bg);
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 24px 16px;
+    flex-shrink: 0;
+}
+
+.brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.brand-icon {
+    width: 28px;
+    height: 28px;
+    color: #FFFFFF;
+}
+
+.brand-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.brand-subtitle {
+    font-size: 0.75rem;
+    opacity: 0.8;
+}
+
+.profile-selector-box {
+    background: rgba(0, 0, 0, 0.15);
+    padding: 10px 12px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.profile-label {
+    display: block;
+    font-size: 0.7rem;
+    opacity: 0.8;
+    margin-bottom: 4px;
+}
+
+.profile-select {
+    width: 100%;
+    background: transparent;
+    border: none;
+    color: #FFFFFF;
+    font-size: 0.85rem;
+    font-weight: 600;
+    outline: none;
+    cursor: pointer;
+}
+
+.profile-select option {
+    background-color: var(--sidebar-bg);
+    color: #FFFFFF;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    color: #E2D1D4;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: all 0.2s;
+}
+
+.nav-item i {
+    width: 18px;
+    height: 18px;
+}
+
+.nav-item:hover {
+    background-color: var(--sidebar-hover);
+    color: #FFFFFF;
+}
+
+.nav-item.active {
+    background-color: var(--sidebar-active);
+    color: #FFFFFF;
+    font-weight: 600;
+}
+
+.sidebar-footer {
+    font-size: 0.7rem;
+    opacity: 0.7;
+    line-height: 1.4;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+/* =========================================================
+   MAIN
+   ORIGINAL DEL DASHBOARD
+========================================================= */
+
+.main-content {
+    flex-grow: 1;
+    padding: 32px 40px;
+    overflow-y: auto;
+}
+
+
+/* =========================================================
+   HEADER
+   ORIGINAL DEL DASHBOARD
+========================================================= */
+
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 24px;
+}
+
+.period-tag {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #8A8A8A;
+}
+
+.page-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.header-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.view-tag {
+    color: var(--brand-burgundy);
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   BOTÓN PRINCIPAL
+   MISMO DEL DASHBOARD
+========================================================= */
+
+.btn-primary {
+    background-color: var(--brand-burgundy);
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: var(--sidebar-bg);
+}
+
+
+/* =========================================================
+   CONTENIDO - ESTUDIANTES Y TUTORES
+========================================================= */
+
+.students-section {
+    width: 100%;
+}
+
+
+/* =========================================================
+   ENCABEZADO DE LA SECCIÓN
+========================================================= */
+
+.students-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 24px;
+}
+
+.section-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+
+    color: var(--text-dark);
+
+    line-height: 1.2;
+
+    margin-bottom: 4px;
+}
+
+.section-description {
+    font-size: 0.85rem;
+
+    color: var(--text-muted);
+
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   TARJETA
+========================================================= */
+
+.students-card {
+    width: 100%;
+
+    background-color: var(--card-bg);
+
+    border: 1px solid var(--border-color);
+
+    border-radius: 12px;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   BUSCADOR
+========================================================= */
+
+.students-search {
+    padding: 16px 20px;
+
+    border-bottom: 1px solid var(--border-color);
+}
+
+.students-search input {
+    width: 100%;
+
+    height: 38px;
+
+    padding: 0 12px;
+
+    border: 1px solid var(--border-color);
+
+    border-radius: 8px;
+
+    background-color: #FFFFFF;
+
+    color: var(--text-dark);
+
+    font-family: 'Plus Jakarta Sans', sans-serif;
+
+    font-size: 0.8rem;
+
+    outline: none;
+}
+
+.students-search input::placeholder {
+    color: #8A8A8A;
+}
+
+.students-search input:focus {
+    border-color: var(--brand-burgundy);
+}
+
+
+/* =========================================================
+   TABLA
+========================================================= */
+
+.table-container {
+    width: 100%;
+
+    overflow-x: auto;
+}
+
+.data-table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    text-align: left;
+
+    font-size: 0.8rem;
+}
+
+.data-table th {
+    color: var(--text-muted);
+
+    font-size: 0.7rem;
+
+    font-weight: 700;
+
+    padding: 10px 20px;
+
+    border-bottom: 1px solid var(--border-color);
+
+    white-space: nowrap;
+}
+
+.data-table td {
+    padding: 12px 20px;
+
+    border-bottom: 1px solid var(--border-color);
+
+    color: var(--text-dark);
+
+    vertical-align: middle;
+
+    white-space: nowrap;
+}
+
+.data-table tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* =========================================================
+   NOMBRE DEL ESTUDIANTE
+========================================================= */
+
+.student-name-cell {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+.student-avatar {
+    width: 32px;
+
+    height: 32px;
+
+    min-width: 32px;
+
+    border-radius: 50%;
+
+    background-color: var(--brand-burgundy);
+
+    color: #FFFFFF;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 0.65rem;
+
+    font-weight: 700;
+}
+
+.student-name-cell span {
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   DOCUMENTOS
+========================================================= */
+
+.document-badge {
+    display: inline-block;
+
+    padding: 4px 10px;
+
+    border-radius: 12px;
+
+    font-size: 0.7rem;
+
+    font-weight: 600;
+}
+
+.document-warning {
+    background-color: var(--badge-warning-bg);
+
+    color: var(--badge-warning-text);
+}
+
+.document-success {
+    background-color: var(--badge-success-bg);
+
+    color: var(--badge-success-text);
+}
+
+
+/* =========================================================
+   ACCIONES
+========================================================= */
+
+.table-actions {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+.btn-edit,
+.btn-delete {
+    background-color: #FFFFFF;
+
+    padding: 5px 9px;
+
+    border-radius: 6px;
+
+    font-family: 'Plus Jakarta Sans', sans-serif;
+
+    font-size: 0.7rem;
+
+    font-weight: 500;
+
+    cursor: pointer;
+}
+
+.btn-edit {
+    color: var(--text-dark);
+
+    border: 1px solid var(--border-color);
+}
+
+.btn-edit:hover {
+    background-color: #F8F5F2;
+}
+
+.btn-delete {
+    color: #E33A3A;
+
+    border: 1px solid #F0B5B5;
+}
+
+.btn-delete:hover {
+    background-color: #FFF3F3;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .students-section-header {
+        align-items: flex-start;
+
+        gap: 16px;
+    }
+
+    .data-table {
+        min-width: 900px;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .main-content {
+        padding: 24px;
+    }
+
+    .top-header {
+        flex-direction: column;
+
+        gap: 12px;
+    }
+
+    .header-meta {
+        align-items: flex-start;
+    }
+
+    .students-section-header {
+        flex-direction: column;
+    }
+}

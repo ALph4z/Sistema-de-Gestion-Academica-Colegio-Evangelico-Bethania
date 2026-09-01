@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduBethania - Portal tutor</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="fecha.js"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="portal-tutor.css">
+</head>
+
+<body>
+
+    <div class="app-layout">
+        <!-- BARRA LATERAL (SIDEBAR) -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="brand-logo">
+                    <i data-lucide="graduation-cap" class="brand-icon"></i>
+                    <div>
+                        <h2 class="brand-title">EduBethania</h2>
+                        <span class="brand-subtitle">Sistema Académico</span>
+                    </div>
+                </div>
+
+                <div class="profile-selector-box">
+                    <label class="profile-label">Perfil demostrativo</label>
+                    <select class="profile-select">
+                        <option value="Administración" selected>Administración</option>
+                        <option value="Docente">Docente</option>
+                        <option value="Tutor">Tutor</option>
+                    </select>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="nav-item">
+                    <i data-lucide="layout-grid"></i>
+                    <span>Panel principal</span>
+                </a>
+                <a href="estudiantes-tutores.html" class="nav-item">
+                    <i data-lucide="users"></i>
+                    <span>Estudiantes y tutores</span>
+                </a>
+                <a href="matricula-expediente.html" class="nav-item">
+                    <i data-lucide="file-check"></i>
+                    <span>Matrícula y documentos</span>
+                </a>
+                <a href="cajas-pagos.html" class="nav-item">
+                    <i data-lucide="wallet"></i>
+                    <span>Caja y pagos</span>
+                </a>
+                <a href="configuracion-academica.html" class="nav-item">
+                    <i data-lucide="sliders"></i>
+                    <span>Configuración académica</span>
+                </a>
+                <a href="carga-docente.html" class="nav-item">
+                    <i data-lucide="monitor-play"></i>
+                    <span>Carga docente</span>
+                </a>
+                <a href="calificaciones.html" class="nav-item">
+                    <i data-lucide="award"></i>
+                    <span>Calificaciones</span>
+                </a>
+                <a href="portal-tutor.html" class="nav-item active">
+                    <i data-lucide="heart"></i>
+                    <span>Portal tutor</span>
+                </a>
+
+                <!-- BOTÓN CERRAR SESIÓN -->
+                <a href="login.html" class="nav-item logout-item">
+                    <i data-lucide="log-out"></i>
+                    <span>Cerrar sesión</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <p>Colegio Evangélico Bethania · San Pedro de Macorís</p>
+            </div>
+        </aside>
+
+        <!-- =====================================================
+         CONTENIDO PRINCIPAL
+         ===================================================== -->
+        <main class="main-content">
+            <!-- =================================================
+             HEADER — MISMA PLANTILLA DEL DASHBOARD
+             ================================================= -->
+            <header class="top-header">
+                <div>
+                    <span class="period-tag" id="school-year"></span>
+                    <h1 class="page-title">Portal tutor</h1>
+                </div>
+
+                <div class="header-meta">
+                    <span class="current-date" id="current-date"></span>
+                    <span class="view-tag">Vista de Administración</span>
+                </div>
+            </header>
+
+            <!-- =================================================
+             MAIN — PORTAL TUTOR
+             ================================================= -->
+            <section class="portal-content">
+                <!-- CABECERA -->
+                <div class="portal-header">
+                    <div class="portal-heading">
+                        <h2 class="portal-title">Portal tutor</h2>
+                        <p class="portal-description">
+                            Consulta el avance académico y 
+                            el estado administrativo del estudiante.
+                        </p>
+                    </div>
+
+                    <div class="student-selector">
+                        <span>Sofía Martínez</span>
+                    </div>
+                </div>
+
+                <!-- =================================================
+                 GRID PRINCIPAL
+                 ================================================= -->
+                <div class="portal-grid">
+
+                    <!-- =================================================
+                     PERFIL DEL ESTUDIANTE
+                     ================================================= -->
+                    <section class="student-card">
+                        <div class="student-avatar">SM</div>
+                        <h3 class="student-name">Sofía Martínez</h3>
+                        <p class="student-class">4to A · Tanda Mañana</p>
+                        <p class="student-tutor">Encargado: María Pérez</p>
+                        <p class="student-phone">809-555-1010</p>
+                        
+                        <div class="student-divider"></div>
+                        <div class="student-average">
+                            <strong>455.6</strong>
+                            <span>Promedio general</span>
+                            <span class="status-badge">Aprueba</span>
+                        </div>
+                    </section>
+
+                    <!-- =================================================
+                     COLUMNA DERECHA
+                     ================================================= -->
+                    <div class="portal-right">
+                        <!-- CALIFICACIONES -->
+                        <section class="portal-card grades-card">
+                            <h3 class="card-section-title">Calificaciones por trimestre</h3>
+                            <div class="grades-grid">
+                                <div class="grade-item">
+                                    <span class="grade-label">1er Trimestre</span>
+                                    <strong class="grade-value">12</strong>
+                                </div>
+
+                                <div class="grade-item">
+                                    <span class="grade-label">2do Trimestre</span>
+                                    <strong class="grade-value">15</strong>
+                                </div>
+
+                                <div class="grade-item">
+                                    <span class="grade-label">3er Trimestre</span>
+                                    <strong class="grade-value">14</strong>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- ESTADO DEL EXPEDIENTE -->
+                        <section class="portal-card documents-card">
+                            <h3 class="card-section-title">Estado del expediente</h3>
+                            <div class="documents-list">
+                                <div class="document-row">
+                                    <span>Acta de nacimiento</span>
+                                    <span class="document-status confirmed">Confirmada</span>
+                                </div>
+
+                                <div class="document-row">
+                                    <span>Fotos de carnet</span>
+                                    <span class="document-status confirmed">Confirmada</span>
+                                </div>
+
+                                <div class="document-row">
+                                    <span>Carta de buena conducta</span>
+                                    <span class="document-status confirmed">Confirmada</span>
+                                </div>
+
+                                <div class="document-row">
+                                    <span>Boletín anterior</span>
+                                    <span class="document-status confirmed">Confirmada</span>
+                                </div>
+
+                                <div class="document-row">
+                                    <span>Certificado médico</span>
+                                    <span class="document-status pending">Pendiente</span>
+                                </div>
+                            </div>
+
+                            <button class="document-button">
+                                Solicitar actualización de documentos
+                            </button>
+                        </section>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <!-- =====================================================
+     INICIALIZAR LUCIDE
+     ===================================================== -->
+    <script>
+        lucide.createIcons();
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,781 @@
+/* =========================================================
+   VARIABLES
+   ========================================================= */
+
+:root {
+    --sidebar-bg: #6A1823;
+    --sidebar-hover: #7F1D2B;
+    --sidebar-active: #8C2231;
+
+    --main-bg: #ffffff;
+    --card-bg: #FFFFFF;
+
+    --text-dark: #2B2B2B;
+    --text-muted: #6E6E6E;
+
+    --brand-burgundy: #7A1C28;
+
+    --border-color: #E8E2DD;
+
+    --badge-success-bg: #E3F6EC;
+    --badge-success-text: #1B7A43;
+
+    --badge-warning-bg: #FEF3D6;
+    --badge-warning-text: #8A6100;
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+
+/* =========================================================
+   BODY
+   ========================================================= */
+
+body {
+    background-color: var(--main-bg);
+    color: var(--text-dark);
+    min-height: 100vh;
+}
+
+
+/* =========================================================
+   APP LAYOUT
+   ========================================================= */
+
+.app-layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+.sidebar {
+    width: 260px;
+
+    background-color: var(--sidebar-bg);
+    color: #FFFFFF;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding: 24px 16px;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.brand-logo {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 20px;
+}
+
+
+.brand-icon {
+    width: 28px;
+    height: 28px;
+
+    color: #FFFFFF;
+}
+
+
+.brand-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+
+    line-height: 1.1;
+}
+
+
+.brand-subtitle {
+    font-size: 0.75rem;
+
+    opacity: 0.8;
+}
+
+
+/* =========================================================
+   SELECTOR DE PERFIL
+   ========================================================= */
+
+.profile-selector-box {
+    background: rgba(0, 0, 0, 0.15);
+
+    padding: 10px 12px;
+
+    border-radius: 8px;
+
+    margin-bottom: 20px;
+}
+
+
+.profile-label {
+    display: block;
+
+    font-size: 0.7rem;
+
+    opacity: 0.8;
+
+    margin-bottom: 4px;
+}
+
+
+.profile-select {
+    width: 100%;
+
+    background: transparent;
+
+    border: none;
+
+    color: #FFFFFF;
+
+    font-size: 0.85rem;
+
+    font-weight: 600;
+
+    outline: none;
+
+    cursor: pointer;
+}
+
+
+.profile-select option {
+    background-color: var(--sidebar-bg);
+
+    color: #FFFFFF;
+}
+
+
+/* =========================================================
+   SIDEBAR NAV
+   ========================================================= */
+
+.sidebar-nav {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+}
+
+
+.nav-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 10px 12px;
+
+    color: #E2D1D4;
+
+    text-decoration: none;
+
+    font-size: 0.85rem;
+
+    font-weight: 500;
+
+    border-radius: 8px;
+
+    transition: all 0.2s;
+}
+
+
+.nav-item i {
+    width: 18px;
+
+    height: 18px;
+
+    flex-shrink: 0;
+}
+
+
+.nav-item:hover {
+    background-color: var(--sidebar-hover);
+
+    color: #FFFFFF;
+}
+
+
+.nav-item.active {
+    background-color: var(--sidebar-active);
+
+    color: #FFFFFF;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   SIDEBAR FOOTER
+   ========================================================= */
+
+.sidebar-footer {
+    font-size: 0.7rem;
+
+    opacity: 0.7;
+
+    line-height: 1.4;
+
+    padding-top: 20px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+   IGUAL AL DASHBOARD
+   ========================================================= */
+
+.main-content {
+    flex-grow: 1;
+
+    padding: 32px 40px;
+
+    overflow-y: auto;
+}
+
+
+/* =========================================================
+   HEADER SUPERIOR
+   IGUAL AL DASHBOARD
+   ========================================================= */
+
+.top-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    margin-bottom: 24px;
+}
+
+
+.period-tag {
+    font-size: 0.75rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+
+    color: #8A8A8A;
+}
+
+
+.page-title {
+    font-size: 1.5rem;
+
+    font-weight: 700;
+
+    color: var(--text-dark);
+}
+
+
+.header-meta {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-end;
+
+    font-size: 0.75rem;
+
+    color: var(--text-muted);
+}
+
+
+.current-date {
+    white-space: nowrap;
+}
+
+
+.view-tag {
+    color: var(--brand-burgundy);
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   CONTENIDO DE CAJA
+   ========================================================= */
+
+.page-section {
+    width: 100%;
+}
+
+
+/* =========================================================
+   ENCABEZADO DE SECCIÓN
+   ========================================================= */
+
+.section-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    margin-bottom: 24px;
+}
+
+
+.section-heading {
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+.section-title {
+    font-size: 1.15rem;
+
+    font-weight: 700;
+
+    color: var(--text-dark);
+
+    line-height: 1.25;
+}
+
+
+.section-description {
+    margin-top: 4px;
+
+    font-size: 0.8rem;
+
+    color: var(--text-muted);
+
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   BOTÓN PRINCIPAL
+   ========================================================= */
+
+.btn-primary {
+    background-color: var(--brand-burgundy);
+
+    color: #FFFFFF;
+
+    border: none;
+
+    padding: 10px 18px;
+
+    border-radius: 8px;
+
+    font-size: 0.85rem;
+
+    font-weight: 600;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    cursor: pointer;
+
+    transition: background-color 0.2s;
+
+    white-space: nowrap;
+}
+
+
+.btn-primary:hover {
+    background-color: var(--sidebar-bg);
+}
+
+
+.btn-primary i {
+    width: 16px;
+
+    height: 16px;
+}
+
+
+/* =========================================================
+   TARJETA DE PAGOS
+   ========================================================= */
+
+.payments-card {
+    width: 100%;
+
+    background-color: var(--card-bg);
+
+    border: 1px solid var(--border-color);
+
+    border-radius: 12px;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   TABLA
+   ========================================================= */
+
+.table-container {
+    width: 100%;
+
+    overflow-x: auto;
+}
+
+
+.data-table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    text-align: left;
+
+    font-size: 0.8rem;
+}
+
+
+.payments-table {
+    table-layout: fixed;
+}
+
+
+/* =========================================================
+   ANCHO COLUMNAS
+   ========================================================= */
+
+.payments-table th:nth-child(1),
+.payments-table td:nth-child(1) {
+    width: 14%;
+}
+
+
+.payments-table th:nth-child(2),
+.payments-table td:nth-child(2) {
+    width: 16%;
+}
+
+
+.payments-table th:nth-child(3),
+.payments-table td:nth-child(3) {
+    width: 14%;
+}
+
+
+.payments-table th:nth-child(4),
+.payments-table td:nth-child(4) {
+    width: 16%;
+}
+
+
+.payments-table th:nth-child(5),
+.payments-table td:nth-child(5) {
+    width: 13%;
+}
+
+
+.payments-table th:nth-child(6),
+.payments-table td:nth-child(6) {
+    width: 13%;
+}
+
+
+.payments-table th:nth-child(7),
+.payments-table td:nth-child(7) {
+    width: 10%;
+}
+
+
+/* =========================================================
+   HEADER TABLA
+   ========================================================= */
+
+.data-table th {
+    color: #8A8A8A;
+
+    font-size: 0.7rem;
+
+    font-weight: 700;
+
+    padding: 12px 18px;
+
+    border-bottom: 1px solid var(--border-color);
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   CELDAS
+   ========================================================= */
+
+.data-table td {
+    padding: 13px 18px;
+
+    border-bottom: 1px solid var(--border-color);
+
+    color: #3B3B3B;
+
+    vertical-align: middle;
+}
+
+
+.data-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* =========================================================
+   CÓDIGO
+   ========================================================= */
+
+.payment-code {
+    font-size: 0.72rem;
+
+    color: #52627A !important;
+}
+
+
+/* =========================================================
+   ESTUDIANTE
+   ========================================================= */
+
+.student-name {
+    color: var(--text-dark) !important;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   MONTO
+   ========================================================= */
+
+.payment-amount {
+    color: var(--brand-burgundy) !important;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   BADGES
+   ========================================================= */
+
+.badge {
+    display: inline-block;
+
+    padding: 4px 10px;
+
+    border-radius: 12px;
+
+    font-size: 0.7rem;
+
+    font-weight: 600;
+}
+
+
+.badge-success {
+    background-color: var(--badge-success-bg);
+
+    color: var(--badge-success-text);
+}
+
+
+.badge-warning {
+    background-color: var(--badge-warning-bg);
+
+    color: var(--badge-warning-text);
+}
+
+
+/* =========================================================
+   BOTÓN VER
+   ========================================================= */
+
+.btn-view {
+    background-color: var(--brand-burgundy);
+
+    color: #FFFFFF;
+
+    border: none;
+
+    padding: 5px 10px;
+
+    border-radius: 5px;
+
+    font-family: 'Plus Jakarta Sans', sans-serif;
+
+    font-size: 0.7rem;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: background-color 0.2s;
+}
+
+
+.btn-view:hover {
+    background-color: var(--sidebar-bg);
+}
+
+
+/* =========================================================
+   TOTAL
+   ========================================================= */
+
+.payments-total {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 16px 18px;
+
+    border-top: 1px solid var(--border-color);
+}
+
+
+.total-label {
+    font-size: 0.8rem;
+
+    color: #6E6E6E;
+}
+
+
+.total-value {
+    font-size: 1rem;
+
+    color: var(--brand-burgundy);
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .main-content {
+        padding: 32px 40px;
+    }
+
+    .payments-table {
+        min-width: 900px;
+
+        table-layout: auto;
+    }
+
+}
+
+
+@media (max-width: 800px) {
+
+    .app-layout {
+        flex-direction: column;
+    }
+
+
+    .sidebar {
+        width: 100%;
+
+        min-height: auto;
+
+        padding: 20px 16px;
+    }
+
+
+    .sidebar-nav {
+        margin-top: 10px;
+    }
+
+
+    .sidebar-footer {
+        margin-top: 20px;
+    }
+
+
+    .main-content {
+        padding: 24px 20px;
+    }
+
+
+    .top-header {
+        flex-direction: column;
+
+        gap: 12px;
+    }
+
+
+    .header-meta {
+        align-items: flex-start;
+    }
+
+
+    .section-header {
+        flex-direction: column;
+
+        gap: 16px;
+    }
+
+
+    .btn-primary {
+        align-self: flex-start;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .main-content {
+        padding: 20px 16px;
+    }
+
+
+    .page-title {
+        font-size: 1.3rem;
+    }
+
+
+    .section-title {
+        font-size: 1rem;
+    }
+
+
+    .section-description {
+        font-size: 0.75rem;
+    }
+
+
+    .payments-total {
+        padding: 14px;
+    }
+
+}
