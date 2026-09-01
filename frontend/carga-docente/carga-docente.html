@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EduBethania - Carga docente</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <link rel="stylesheet" href="carga-docente.css">
+</head>
+
+<body>
+
+    <div class="app-layout">
+
+        <!-- =====================================================
+             SIDEBAR
+             ===================================================== -->
+        <aside class="sidebar">
+
+            <div class="sidebar-header">
+
+                <div class="brand-logo">
+                    <i data-lucide="graduation-cap" class="brand-icon"></i>
+
+                    <div>
+                        <h2 class="brand-title">EduBethania</h2>
+                        <span class="brand-subtitle">Sistema Académico</span>
+                    </div>
+                </div>
+
+                <div class="profile-selector-box">
+
+                    <label class="profile-label">
+                        Perfil demostrativo
+                    </label>
+
+                    <select class="profile-select">
+
+                        <option value="Administración" selected>
+                            Administración
+                        </option>
+
+                        <option value="Secretaría">
+                            Secretaría
+                        </option>
+
+                        <option value="Docente">
+                            Docente
+                        </option>
+
+                        <option value="Tutor">
+                            Tutor
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- MENÚ -->
+            <nav class="sidebar-nav">
+
+                <a href="dashboard.html" class="nav-item">
+                    <i data-lucide="layout-grid"></i>
+                    <span>Panel principal</span>
+                </a>
+
+                <a href="estudiantes-tutores.html" class="nav-item">
+                    <i data-lucide="users"></i>
+                    <span>Estudiantes y tutores</span>
+                </a>
+
+                <a href="matricula-expediente.html" class="nav-item">
+                    <i data-lucide="file-check"></i>
+                    <span>Matrícula y documentos</span>
+                </a>
+
+                <a href="caja-pagos.html" class="nav-item">
+                    <i data-lucide="wallet"></i>
+                    <span>Caja y pagos</span>
+                </a>
+
+                <a href="configuracion-academica.html" class="nav-item">
+                    <i data-lucide="sliders"></i>
+                    <span>Configuración académica</span>
+                </a>
+
+                <a href="carga-docente.html" class="nav-item active">
+                    <i data-lucide="monitor-play"></i>
+                    <span>Carga docente</span>
+                </a>
+
+                <a href="#" class="nav-item">
+                    <i data-lucide="award"></i>
+                    <span>Calificaciones</span>
+                </a>
+
+                <a href="#" class="nav-item">
+                    <i data-lucide="heart"></i>
+                    <span>Portal tutor</span>
+                </a>
+
+                <a href="login.html" class="nav-item logout-item">
+                    <i data-lucide="log-out"></i>
+                    <span>Cerrar sesión</span>
+                </a>
+
+            </nav>
+
+
+            <!-- FOOTER SIDEBAR -->
+            <div class="sidebar-footer">
+
+                <p>
+                    Colegio Evangélico Bethania · San Pedro de Macorís
+                </p>
+
+            </div>
+
+        </aside>
+
+
+        <!-- =====================================================
+             CONTENIDO PRINCIPAL
+             ===================================================== -->
+        <main class="main-content">
+
+            <!-- =================================================
+                 HEADER
+                 MISMA ESTRUCTURA DEL DASHBOARD
+                 ================================================= -->
+            <header class="top-header">
+
+                <div>
+
+                    <span class="period-tag">
+                        AÑO ESCOLAR 2026–2027
+                    </span>
+
+                    <h1 class="page-title">
+                        Carga docente
+                    </h1>
+
+                </div>
+
+
+                <div class="header-meta">
+
+                    <span class="current-date">
+                        martes, 25 de agosto de 2026
+                    </span>
+
+                    <span class="view-tag">
+                        Vista de Administración
+                    </span>
+
+                </div>
+
+            </header>
+
+
+            <!-- =================================================
+                 CONTENIDO DE CARGA DOCENTE
+                 ================================================= -->
+            <section class="page-section">
+
+                <!-- CABECERA -->
+                <div class="section-header">
+
+                    <div class="section-heading">
+
+                        <h2 class="section-title">
+                            Carga docente
+                        </h2>
+
+                        <p class="section-description">
+                            Asigna materias, secciones y organiza a los responsables del aula.
+                        </p>
+
+                    </div>
+
+
+                    <button class="btn-primary">
+                        <span>+ Asignar docente</span>
+                    </button>
+
+                </div>
+
+
+                <!-- =================================================
+                     TABLA DE DOCENTES
+                     ================================================= -->
+                <section class="teachers-card">
+
+                    <div class="table-container">
+
+                        <table class="data-table teachers-table">
+
+                            <thead>
+
+                                <tr>
+                                    <th>DOCENTE</th>
+                                    <th>MATERIA</th>
+                                    <th>GRADO</th>
+                                    <th>TANDA</th>
+                                    <th>ESTADO</th>
+                                    <th>ACCIONES</th>
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody>
+
+                                <!-- DOCENTE 1 -->
+                                <tr>
+
+                                    <td>
+
+                                        <div class="teacher-info">
+
+                                            <div class="teacher-avatar">
+                                                LB
+                                            </div>
+
+                                            <span class="teacher-name">
+                                                Laura Blanco
+                                            </span>
+
+                                        </div>
+
+                                    </td>
+
+                                    <td>
+                                        Lengua Española
+                                    </td>
+
+                                    <td>
+                                        4to A
+                                    </td>
+
+                                    <td>
+                                        Mañana
+                                    </td>
+
+                                    <td>
+
+                                        <span class="badge badge-success">
+                                            Vigente
+                                        </span>
+
+                                    </td>
+
+                                    <td>
+
+                                        <div class="action-buttons">
+
+                                            <button class="btn-table">
+                                                Editar
+                                            </button>
+
+                                            <button class="btn-table">
+                                                Desactivar
+                                            </button>
+
+                                            <button class="btn-table btn-danger">
+                                                Eliminar
+                                            </button>
+
+                                        </div>
+
+                                    </td>
+
+                                </tr>
+
+
+                                <!-- DOCENTE 2 -->
+                                <tr>
+
+                                    <td>
+
+                                        <div class="teacher-info">
+
+                                            <div class="teacher-avatar">
+                                                CV
+                                            </div>
+
+                                            <span class="teacher-name">
+                                                Carlos Valdez
+                                            </span>
+
+                                        </div>
+
+                                    </td>
+
+                                    <td>
+                                        Matemática
+                                    </td>
+
+                                    <td>
+                                        5to B
+                                    </td>
+
+                                    <td>
+                                        Mañana
+                                    </td>
+
+                                    <td>
+
+                                        <span class="badge badge-success">
+                                            Vigente
+                                        </span>
+
+                                    </td>
+
+                                    <td>
+
+                                        <div class="action-buttons">
+
+                                            <button class="btn-table">
+                                                Editar
+                                            </button>
+
+                                            <button class="btn-table">
+                                                Desactivar
+                                            </button>
+
+                                            <button class="btn-table btn-danger">
+                                                Eliminar
+                                            </button>
+
+                                        </div>
+
+                                    </td>
+
+                                </tr>
+
+
+                                <!-- DOCENTE 3 -->
+                                <tr>
+
+                                    <td>
+
+                                        <div class="teacher-info">
+
+                                            <div class="teacher-avatar">
+                                                NC
+                                            </div>
+
+                                            <span class="teacher-name">
+                                                Natalia Cruz
+                                            </span>
+
+                                        </div>
+
+                                    </td>
+
+                                    <td>
+                                        Ciencias Naturales
+                                    </td>
+
+                                    <td>
+                                        5to B
+                                    </td>
+
+                                    <td>
+                                        Mañana
+                                    </td>
+
+                                    <td>
+
+                                        <span class="badge badge-success">
+                                            Vigente
+                                        </span>
+
+                                    </td>
+
+                                    <td>
+
+                                        <div class="action-buttons">
+
+                                            <button class="btn-table">
+                                                Editar
+                                            </button>
+
+                                            <button class="btn-table">
+                                                Desactivar
+                                            </button>
+
+                                            <button class="btn-table btn-danger">
+                                                Eliminar
+                                            </button>
+
+                                        </div>
+
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </section>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- =====================================================
+         LUCIDE
+         ===================================================== -->
+    <script>
+        lucide.createIcons();
+    </script>
+
+</body>
+
+</html>
