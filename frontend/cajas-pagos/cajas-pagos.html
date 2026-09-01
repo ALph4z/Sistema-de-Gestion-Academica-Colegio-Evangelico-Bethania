@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EduBethania - Caja y control de pagos</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="cajas-pagos.css">
+</head>
+
+<body>
+
+<div class="app-layout">
+
+    <!-- =====================================================
+         SIDEBAR
+         ===================================================== -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-header">
+
+            <div class="brand-logo">
+
+                <i data-lucide="graduation-cap" class="brand-icon"></i>
+
+                <div>
+                    <h2 class="brand-title">EduBethania</h2>
+                    <span class="brand-subtitle">
+                        Sistema Académico
+                    </span>
+                </div>
+
+            </div>
+
+
+            <div class="profile-selector-box">
+
+                <label class="profile-label">
+                    Perfil demostrativo
+                </label>
+
+                <select class="profile-select">
+
+                    <option value="Administración" selected>
+                        Administración
+                    </option>
+
+                    <option value="Secretaría">
+                        Secretaría
+                    </option>
+
+                    <option value="Docente">
+                        Docente
+                    </option>
+
+                    <option value="Tutor">
+                        Tutor
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             MENÚ
+             ================================================= -->
+
+        <nav class="sidebar-nav">
+
+            <a href="dashboard.html" class="nav-item">
+
+                <i data-lucide="layout-grid"></i>
+
+                <span>
+                    Panel principal
+                </span>
+
+            </a>
+
+
+            <a href="estudiantes-tutores.html" class="nav-item">
+
+                <i data-lucide="users"></i>
+
+                <span>
+                    Estudiantes y tutores
+                </span>
+
+            </a>
+
+
+            <a href="matricula-expediente.html" class="nav-item">
+
+                <i data-lucide="file-check"></i>
+
+                <span>
+                    Matrícula y documentos
+                </span>
+
+            </a>
+
+
+            <a href="caja-pagos.html" class="nav-item active">
+
+                <i data-lucide="wallet"></i>
+
+                <span>
+                    Caja y pagos
+                </span>
+
+            </a>
+
+
+            <a href="#" class="nav-item">
+
+                <i data-lucide="sliders"></i>
+
+                <span>
+                    Configuración académica
+                </span>
+
+            </a>
+
+
+            <a href="#" class="nav-item">
+
+                <i data-lucide="monitor-play"></i>
+
+                <span>
+                    Carga docente
+                </span>
+
+            </a>
+
+
+            <a href="#" class="nav-item">
+
+                <i data-lucide="award"></i>
+
+                <span>
+                    Calificaciones
+                </span>
+
+            </a>
+
+
+            <a href="#" class="nav-item">
+
+                <i data-lucide="heart"></i>
+
+                <span>
+                    Portal tutor
+                </span>
+
+            </a>
+
+
+            <a href="login.html" class="nav-item logout-item">
+
+                <i data-lucide="log-out"></i>
+
+                <span>
+                    Cerrar sesión
+                </span>
+
+            </a>
+
+        </nav>
+
+
+        <!-- =================================================
+             FOOTER
+             ================================================= -->
+
+        <div class="sidebar-footer">
+
+            <p>
+                Colegio Evangélico Bethania · San Pedro de Macorís
+            </p>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN
+         ===================================================== -->
+
+    <main class="main-content">
+
+
+        <!-- =================================================
+             HEADER
+             ESTE HEADER ES EL MISMO DEL DASHBOARD
+             ================================================= -->
+
+        <header class="top-header">
+
+            <div>
+
+                <span class="period-tag">
+                    AÑO ESCOLAR 2026–2027
+                </span>
+
+                <h1 class="page-title">
+                    Caja y control de pagos
+                </h1>
+
+            </div>
+
+
+            <div class="header-meta">
+
+                <span class="current-date">
+                    Martes, 1 de Septiembre de 2026
+                </span>
+
+                <span class="view-tag">
+                    Vista de Administración
+                </span>
+
+            </div>
+
+        </header>
+
+
+        <!-- =================================================
+             CONTENIDO PRINCIPAL
+             ================================================= -->
+
+        <section class="page-section">
+
+
+            <!-- ENCABEZADO -->
+
+            <div class="section-header">
+
+                <div class="section-heading">
+
+                    <h2 class="section-title">
+                        Caja y pagos
+                    </h2>
+
+                    <p class="section-description">
+                        Control de ingresos y pagos. Consulta y actualiza
+                        el historial de transacciones.
+                    </p>
+
+                </div>
+
+
+                <button class="btn-primary">
+
+                    <i data-lucide="plus"></i>
+
+                    <span>
+                        Registrar pago
+                    </span>
+
+                </button>
+
+            </div>
+
+
+            <!-- =================================================
+                 TARJETA DE PAGOS
+                 ================================================= -->
+
+            <section class="payments-card">
+
+
+                <div class="table-container">
+
+                    <table class="data-table payments-table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>CÓDIGO</th>
+
+                                <th>ESTUDIANTE</th>
+
+                                <th>FECHA</th>
+
+                                <th>TIPO</th>
+
+                                <th>MONTO</th>
+
+                                <th>ESTADO</th>
+
+                                <th>ACCIÓN</th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody>
+
+
+                            <!-- PAGO 1 -->
+
+                            <tr>
+
+                                <td class="payment-code">
+                                    RC-2026-0048
+                                </td>
+
+                                <td class="student-name">
+                                    Camila Núñez
+                                </td>
+
+                                <td>
+                                    25 ago 2026
+                                </td>
+
+                                <td>
+                                    Matrícula
+                                </td>
+
+                                <td class="payment-amount">
+                                    RD$8,500
+                                </td>
+
+                                <td>
+
+                                    <span class="badge badge-success">
+                                        Pagado
+                                    </span>
+
+                                </td>
+
+                                <td>
+
+                                    <button class="btn-view">
+                                        Ver
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+
+                            <!-- PAGO 2 -->
+
+                            <tr>
+
+                                <td class="payment-code">
+                                    RC-2026-0049
+                                </td>
+
+                                <td class="student-name">
+                                    Sofía Martínez
+                                </td>
+
+                                <td>
+                                    25 ago 2026
+                                </td>
+
+                                <td>
+                                    Mantenimiento
+                                </td>
+
+                                <td class="payment-amount">
+                                    RD$8,500
+                                </td>
+
+                                <td>
+
+                                    <span class="badge badge-success">
+                                        Pagado
+                                    </span>
+
+                                </td>
+
+                                <td>
+
+                                    <button class="btn-view">
+                                        Ver
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <!-- TOTAL -->
+
+                <div class="payments-total">
+
+                    <span class="total-label">
+                        Total registrado este período
+                    </span>
+
+                    <strong class="total-value">
+                        RD$17,000
+                    </strong>
+
+                </div>
+
+            </section>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- =====================================================
+     LUCIDE
+     ===================================================== -->
+
+<script>
+    lucide.createIcons();
+</script>
+
+</body>
+
+</html>
