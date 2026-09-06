@@ -1,21 +1,34 @@
 import os
+
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.automap import automap_base
 
-# Ruta al archivo .db (generado a partir de database/bethania_sqlite.sql)
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(**file**))))
-DB_PATH = os.path.join(BASE_DIR, “database”, “bethania.db”)
-DATABASE_URL = f”sqlite:///{DB_PATH}”
+# Ruta al archivo .db
+BASE_DIR = os.path.dirname(
+    os.path.dirname(
+        os.path.dirname(os.path.abspath(__file__))
+    )
+)
 
-engine = create_engine(DATABASE_URL, connect_args={“check_same_thread”: False})
-SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+DB_PATH = os.path.join(BASE_DIR, "database", "bethania.db")
 
-# Reflexión automática: mapea todas las tablas que ya existen en el .db,
+DATABASE_URL = f"sqlite:///{DB_PATH}"
 
-# sin necesidad de reescribir cada modelo a mano
+engine = create_engine(
+    DATABASE_URL,
+    connect_args={"check_same_thread": False}
+)
 
+SessionLocal = sessionmaker(
+    autocommit=False,
+    autoflush=False,
+    bind=engine
+)
+
+
+# Reflexión automática de las tablas existentes
 Base = automap_base()
 Base.prepare(autoload_with=engine)
 
@@ -33,13 +46,19 @@ DocumentoRequerido = Base.classes.documentos_requeridos
 Pago = Base.classes.pagos
 Calificacion = Base.classes.calificaciones
 
+
 def get_db():
-db = SessionLocal()
-try:
-yield db
-finally:
-db.close()
+    db = SessionLocal()
+
+    try:
+        yield db
+    finally:
+        db.close()
+
 
 def to_dict(obj):
-“”“Convierte una fila ORM (mapeada por automap) en un diccionario serializable a JSON.”””
-return {c.key: getattr(obj, c.key) for c in obj.**table**.columns}
+    """Convierte una fila ORM en un diccionario serializable a JSON."""
+    return {
+        c.key: getattr(obj, c.key)
+        for c in obj.__table__.columns
+    }
