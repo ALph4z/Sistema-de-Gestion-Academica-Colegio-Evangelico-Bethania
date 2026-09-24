@@ -1199,7 +1199,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                         <button
                             type="button"
-                            class="btn-table"
+                            class="btn-edit"
                             data-action="edit"
                             data-id="${assignment.id}">
                             Editar
@@ -1207,7 +1207,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                         <button
                             type="button"
-                            class="btn-table"
+                            class="btn-delete"
                             data-action="status"
                             data-id="${assignment.id}">
                             ${actionText}

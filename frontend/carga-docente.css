@@ -691,7 +691,7 @@ body {
 
     gap: 8px;
 
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
 }
 
 
@@ -734,6 +734,62 @@ body {
     background-color: #FFF3F3;
 }
 
+.btn-edit,
+.btn-delete {
+
+    padding: 6px 9px;
+
+    border-radius: 6px;
+
+    font-family: inherit;
+
+    font-size: .68rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+}
+
+
+.btn-edit {
+
+    border: 1px solid #DED6D1;
+
+    background: #ffffff;
+
+    color: #5C5652;
+
+    height: 30px;
+    width: 75px;
+
+}
+
+
+.btn-edit:hover {
+
+    background: #F8F5F3;
+
+}
+
+
+.btn-delete {
+
+    border: 1px solid #E9CCCC;
+
+    background: #FFF8F8;
+
+    color: #A13737;
+
+    height: 30px;
+    width: 75px;
+}
+
+
+.btn-delete:hover {
+
+    background: #FCEEEE;
+
+}
 
 /* =========================================================
    ESTADO VACÍO

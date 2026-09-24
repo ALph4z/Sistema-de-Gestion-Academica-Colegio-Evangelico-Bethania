@@ -673,7 +673,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <td>
                     <button
                         type="button"
-                        class="table-action-btn"
+                        class="btn-table"
                         data-receipt="${escapeHtml(
                             payment.receipt
                         )}"
@@ -692,7 +692,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const viewButtons =
             paymentsTableBody.querySelectorAll(
-                ".table-action-btn"
+                ".btn-table"
             );
 
         viewButtons.forEach(button => {

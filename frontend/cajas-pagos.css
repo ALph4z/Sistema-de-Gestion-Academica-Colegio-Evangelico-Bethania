@@ -293,6 +293,37 @@ body {
     height: 16px;
 }
 
+.btn-table {
+    font-family: inherit;
+    cursor: pointer;
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease,
+        opacity 0.2s ease;
+}
+
+
+
+.btn-table {
+    padding: 7px 11px;
+
+    border: 1px solid var(--border-color);
+    border-radius: 7px;
+
+    background: #ffffff;
+    color: var(--brand-burgundy);
+
+    font-size: 0.68rem;
+    font-weight: 600;
+}
+
+
+.btn-table:hover {
+    border-color: var(--brand-burgundy);
+    background: #FBF1F2;
+}
+
 .payments-card {
     width: 100%;
     background-color: var(--card-bg);
