@@ -11,10 +11,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
-        rel="stylesheet"
-    >
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
 
     <!-- Fecha y navegación -->
     <script src="fecha.js"></script>
@@ -41,10 +39,7 @@
 
                 <div class="brand-logo">
 
-                    <i
-                        data-lucide="graduation-cap"
-                        class="brand-icon"
-                    ></i>
+                    <i data-lucide="graduation-cap" class="brand-icon"></i>
 
                     <div>
                         <h2 class="brand-title">
@@ -87,82 +82,55 @@
 
             <nav class="sidebar-nav">
 
-                <a
-                    href="dashboard.html"
-                    class="nav-item"
-                >
+                <a href="dashboard.html" class="nav-item">
                     <i data-lucide="layout-grid"></i>
                     <span>Panel principal</span>
                 </a>
 
 
-                <a
-                    href="estudiantes-tutores.html"
-                    class="nav-item"
-                >
+                <a href="estudiantes-tutores.html" class="nav-item">
                     <i data-lucide="users"></i>
                     <span>Estudiantes y tutores</span>
                 </a>
 
 
-                <a
-                    href="matricula-expediente.html"
-                    class="nav-item"
-                >
+                <a href="matricula-expediente.html" class="nav-item">
                     <i data-lucide="file-check"></i>
                     <span>Matrícula y documentos</span>
                 </a>
 
 
-                <a
-                    href="cajas-pagos.html"
-                    class="nav-item"
-                >
+                <a href="cajas-pagos.html" class="nav-item">
                     <i data-lucide="wallet"></i>
                     <span>Caja y pagos</span>
                 </a>
 
 
-                <a
-                    href="configuracion-academica.html"
-                    class="nav-item active"
-                >
+                <a href="configuracion-academica.html" class="nav-item active">
                     <i data-lucide="sliders"></i>
                     <span>Configuración académica</span>
                 </a>
 
 
-                <a
-                    href="carga-docente.html"
-                    class="nav-item"
-                >
+                <a href="carga-docente.html" class="nav-item">
                     <i data-lucide="monitor-play"></i>
                     <span>Carga docente</span>
                 </a>
 
 
-                <a
-                    href="calificaciones.html"
-                    class="nav-item"
-                >
+                <a href="calificaciones.html" class="nav-item">
                     <i data-lucide="award"></i>
                     <span>Calificaciones</span>
                 </a>
 
 
-                <a
-                    href="portal-tutor.html"
-                    class="nav-item"
-                >
+                <a href="portal-tutor.html" class="nav-item">
                     <i data-lucide="heart"></i>
                     <span>Portal tutor</span>
                 </a>
 
 
-                <a
-                    href="login.html"
-                    class="nav-item logout-item"
-                >
+                <a href="login.html" class="nav-item logout-item">
                     <i data-lucide="log-out"></i>
                     <span>Cerrar sesión</span>
                 </a>
@@ -185,10 +153,7 @@
              OVERLAY PARA MÓVIL
              ===================================================== -->
 
-        <div
-            class="sidebar-overlay"
-            id="sidebar-overlay"
-        ></div>
+        <div class="sidebar-overlay" id="sidebar-overlay"></div>
 
 
         <!-- =====================================================
@@ -198,50 +163,18 @@
         <main class="main-content">
 
             <!-- HEADER -->
-
             <header class="top-header">
-
-                <div class="header-content">
-
-                    <span
-                        class="period-tag"
-                        id="school-year"
-                    >
-                        Año escolar 2026–2027
-                    </span>
-
-                    <h1 class="page-title">
-                        Configuración académica
-                    </h1>
-
+                <div>
+                    <span class="period-tag" id="school-year"></span>
+                    <h1 class="page-title">Resumen general</h1>
                 </div>
-
-
                 <div class="header-meta">
-
-                    <span
-                        class="current-date"
-                        id="current-date"
-                    ></span>
-
-                    <span class="view-tag">
-                        Vista de Administración
-                    </span>
-
+                    <span class="current-date" id="current-date"></span>
+                    <span class="view-tag">Vista de Administración</span>
                 </div>
-
-
-                <!-- MENÚ MÓVIL -->
-
-                <button
-                    class="menu-toggle"
-                    id="menu-toggle"
-                    type="button"
-                    aria-label="Abrir menú"
-                >
+                <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
                     <i data-lucide="menu"></i>
                 </button>
-
             </header>
 
 
@@ -266,11 +199,7 @@
                     </div>
 
 
-                    <button
-                        class="btn-primary"
-                        id="create-level-button"
-                        type="button"
-                    >
+                    <button class="btn-primary" id="create-level-button" type="button">
                         <span>
                             + Crear nivel
                         </span>
@@ -283,10 +212,7 @@
                      GRID DE NIVELES
                      ================================================= -->
 
-                <div
-                    class="levels-grid"
-                    id="levels-grid"
-                ></div>
+                <div class="levels-grid" id="levels-grid"></div>
 
             </section>
 
@@ -299,18 +225,9 @@
          MODAL CREAR / EDITAR NIVEL
          ========================================================= -->
 
-    <div
-        class="modal-overlay"
-        id="level-modal"
-        hidden
-    >
+    <div class="modal-overlay" id="level-modal" hidden>
 
-        <div
-            class="level-modal"
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="level-modal-title"
-        >
+        <div class="level-modal" role="dialog" aria-modal="true" aria-labelledby="level-modal-title">
 
             <div class="level-modal-header">
 
@@ -324,12 +241,7 @@
                     </p>
                 </div>
 
-                <button
-                    type="button"
-                    class="modal-close"
-                    id="close-level-modal"
-                    aria-label="Cerrar"
-                >
+                <button type="button" class="modal-close" id="close-level-modal" aria-label="Cerrar">
                     <i data-lucide="x"></i>
                 </button>
 
@@ -346,14 +258,8 @@
                             Nombre del curso
                         </label>
 
-                        <input
-                            type="text"
-                            id="course-name"
-                            name="courseName"
-                            placeholder="Ej. 5to de Primaria"
-                            maxlength="80"
-                            required
-                        >
+                        <input type="text" id="course-name" name="courseName" placeholder="Ej. 5to de Primaria"
+                            maxlength="80" required>
 
                     </div>
 
@@ -364,11 +270,7 @@
                             Nivel
                         </label>
 
-                        <select
-                            id="academic-level"
-                            name="academicLevel"
-                            required
-                        >
+                        <select id="academic-level" name="academicLevel" required>
 
                             <option value="">
                                 Selecciona el nivel
@@ -397,14 +299,7 @@
                             Sección
                         </label>
 
-                        <input
-                            type="text"
-                            id="section-name"
-                            name="section"
-                            placeholder="Ej. B"
-                            maxlength="30"
-                            required
-                        >
+                        <input type="text" id="section-name" name="section" placeholder="Ej. B" maxlength="30" required>
 
                         <small>
                             La sección no puede repetirse dentro del mismo periodo escolar.
@@ -419,11 +314,7 @@
                             Tanda
                         </label>
 
-                        <select
-                            id="shift"
-                            name="shift"
-                            required
-                        >
+                        <select id="shift" name="shift" required>
 
                             <option value="">
                                 Selecciona la tanda
@@ -442,10 +333,7 @@
                     </div>
 
 
-                    <div
-                        class="active-period-box"
-                        id="active-period-box"
-                    >
+                    <div class="active-period-box" id="active-period-box">
 
                         <div class="active-period-icon">
                             <i data-lucide="calendar-days"></i>
@@ -466,29 +354,18 @@
                     </div>
 
 
-                    <div
-                        class="form-message"
-                        id="level-form-message"
-                    ></div>
+                    <div class="form-message" id="level-form-message"></div>
 
                 </div>
 
 
                 <div class="level-modal-footer">
 
-                    <button
-                        type="button"
-                        class="btn-secondary"
-                        id="cancel-level"
-                    >
+                    <button type="button" class="btn-secondary" id="cancel-level">
                         Cancelar
                     </button>
 
-                    <button
-                        type="submit"
-                        class="btn-primary"
-                        id="save-level"
-                    >
+                    <button type="submit" class="btn-primary" id="save-level">
                         Guardar nivel
                     </button>
 
@@ -505,18 +382,9 @@
          MODAL CONFIRMAR ELIMINACIÓN
          ========================================================= -->
 
-    <div
-        class="modal-overlay"
-        id="delete-modal"
-        hidden
-    >
+    <div class="modal-overlay" id="delete-modal" hidden>
 
-        <div
-            class="delete-modal"
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="delete-modal-title"
-        >
+        <div class="delete-modal" role="dialog" aria-modal="true" aria-labelledby="delete-modal-title">
 
             <div class="delete-icon">
                 <i data-lucide="trash-2"></i>
@@ -532,19 +400,11 @@
 
             <div class="delete-modal-actions">
 
-                <button
-                    type="button"
-                    class="btn-secondary"
-                    id="cancel-delete"
-                >
+                <button type="button" class="btn-secondary" id="cancel-delete">
                     Cancelar
                 </button>
 
-                <button
-                    type="button"
-                    class="btn-delete-confirm"
-                    id="confirm-delete"
-                >
+                <button type="button" class="btn-delete-confirm" id="confirm-delete">
                     Eliminar
                 </button>
 
@@ -559,12 +419,7 @@
          TOAST
          ========================================================= -->
 
-    <div
-        class="toast"
-        id="toast"
-        role="status"
-        aria-live="polite"
-    ></div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 
     <!-- =====================================================
@@ -583,4 +438,5 @@
     </script>
 
 </body>
+
 </html>

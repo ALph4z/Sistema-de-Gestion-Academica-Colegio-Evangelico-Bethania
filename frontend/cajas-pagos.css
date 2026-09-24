@@ -661,6 +661,9 @@ body {
     transform: translateY(0);
 }
 
+/*TABLETA*/
+
+
 @media (max-width: 1100px) {
     .main-content {
         padding: 28px;
@@ -671,6 +674,8 @@ body {
         table-layout: auto;
     }
 }
+
+/*CELULAR*/
 
 @media (max-width: 700px) {
     .top-header {
@@ -818,6 +823,8 @@ body {
         max-width: none;
     }
 }
+
+/*CELULAR PEQUEÑO*/
 
 @media (max-width: 400px) {
     .main-content {
