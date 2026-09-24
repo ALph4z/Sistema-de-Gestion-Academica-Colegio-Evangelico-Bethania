@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EduBethania - Estudiantes y tutores</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="estudiantes-tutores.css">
+
+    <!-- Lucide -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+</head>
+
+
+<body>
+
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <div class="app-layout">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="brand-logo">
+                    <i data-lucide="graduation-cap" class="brand-icon"></i>
+                    <div>
+                        <h2 class="brand-title">EduBethania</h2>
+                        <span class="brand-subtitle">Sistema Académico</span>
+                    </div>
+                </div>
+
+                <div class="profile-selector-box">
+                    <label class="profile-label">Perfil demostrativo</label>
+                    <select class="profile-select">
+                        <option value="Administración" selected>Administración</option>
+                        <option value="Docente">Docente</option>
+                        <option value="Tutor">Tutor</option>
+                    </select>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="nav-item">
+                    <i data-lucide="layout-grid"></i>
+                    <span>Panel principal</span>
+                </a>
+                <a href="estudiantes-tutores.html" class="nav-item active">
+                    <i data-lucide="users"></i>
+                    <span>Estudiantes y tutores</span>
+                </a>
+                <a href="matricula-expediente.html" class="nav-item">
+                    <i data-lucide="file-check"></i>
+                    <span>Matrícula y documentos</span>
+                </a>
+                <a href="cajas-pagos.html" class="nav-item">
+                    <i data-lucide="wallet"></i>
+                    <span>Caja y pagos</span>
+                </a>
+                <a href="configuracion-academica.html" class="nav-item">
+                    <i data-lucide="sliders"></i>
+                    <span>Configuración académica</span>
+                </a>
+                <a href="carga-docente.html" class="nav-item">
+                    <i data-lucide="monitor-play"></i>
+                    <span>Carga docente</span>
+                </a>
+                <a href="calificaciones.html" class="nav-item">
+                    <i data-lucide="award"></i>
+                    <span>Calificaciones</span>
+                </a>
+                <a href="portal-tutor.html" class="nav-item">
+                    <i data-lucide="heart"></i>
+                    <span>Portal tutor</span>
+                </a>
+                <a href="login.html" class="nav-item logout-item">
+                    <i data-lucide="log-out"></i>
+                    <span>Cerrar sesión</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <p>Colegio Evangélico Bethania · San Pedro de Macorís</p>
+            </div>
+        </aside>
+
+        <main class="main-content">
+
+
+            <!-- =================================================
+                 HEADER
+            ================================================== -->
+
+            <header class="top-header">
+
+                <div class="header-content">
+
+                    <span class="period-tag" id="school-year">
+                    </span>
+
+                    <h1 class="page-title">
+                        Estudiantes y tutores
+                    </h1>
+
+                </div>
+
+                <div class="header-meta">
+
+                    <span class="current-date" id="current-date">
+                    </span>
+
+                    <span class="view-tag">
+                        Vista de Administración
+                    </span>
+
+                </div>
+
+                <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Abrir menú">
+
+                    <i data-lucide="menu"></i>
+
+                </button>
+
+            </header>
+
+
+            <!-- =================================================
+                 CONTENIDO
+            ================================================== -->
+
+            <section class="students-section">
+
+
+                <!-- ENCABEZADO -->
+
+                <div class="students-section-header">
+
+                    <div>
+
+                        <h2 class="section-title">
+                            Estudiantes y tutores
+                        </h2>
+
+                        <p class="section-description">
+                            Registro de todos los estudiantes activos y detalle de sus documentos.
+                        </p>
+
+                    </div>
+
+
+                    <button class="btn-primary" id="new-student-btn" type="button">
+
+                        <i data-lucide="user-plus"></i>
+
+                        <span>
+                            Nuevo estudiante
+                        </span>
+
+                    </button>
+
+                </div>
+
+
+                <!-- =================================================
+                     TARJETA
+                ================================================== -->
+
+                <section class="students-card">
+
+
+                    <!-- BUSCADOR -->
+
+                    <div class="students-search">
+
+                        <i data-lucide="search"></i>
+
+                        <input type="text" id="student-search" placeholder="Buscar estudiante o sección..."
+                            aria-label="Buscar estudiante o sección">
+
+                    </div>
+
+
+                    <!-- =================================================
+                         TABLA
+                    ================================================== -->
+
+                    <div class="table-container">
+
+                        <table class="data-table students-table">
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>NOMBRE</th>
+
+                                    <th>TUTOR</th>
+
+                                    <th>SECCIÓN</th>
+
+                                    <th>TELÉFONO</th>
+
+                                    <th>DOCUMENTOS</th>
+
+                                    <th>ACCIONES</th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="students-table-body">
+
+
+                                <!-- SOFÍA -->
+
+                                <tr data-student-id="1">
+
+                                    <td>
+
+                                        <div class="student-name-cell">
+
+                                            <div class="student-avatar">
+                                                SM
+                                            </div>
+
+                                            <span>
+                                                Sofía Martínez
+                                            </span>
+
+                                        </div>
+
+                                    </td>
+
+                                    <td>
+                                        María Pérez
+                                    </td>
+
+                                    <td>
+                                        4to A
+                                    </td>
+
+                                    <td>
+                                        809-555-1010
+                                    </td>
+
+                                    <td>
+
+                                        <span class="document-badge document-warning">
+                                            Sin documentos
+                                        </span>
+
+                                    </td>
+
+                                    <td>
+
+                                        <div class="table-actions">
+
+                                            <button class="btn-edit" type="button" data-action="edit" data-id="1">
+
+                                                Editar
+
+                                            </button>
+
+                                            <button class="btn-delete" type="button" data-action="delete" data-id="1">
+
+                                                Eliminar
+
+                                            </button>
+
+                                        </div>
+
+                                    </td>
+
+                                </tr>
+
+
+                                <!-- LUIS -->
+
+                                <tr data-student-id="2">
+
+                                    <td>
+
+                                        <div class="student-name-cell">
+
+                                            <div class="student-avatar">
+                                                LM
+                                            </div>
+
+                                            <span>
+                                                Luis Manuel Reyes
+                                            </span>
+
+                                        </div>
+
+                                    </td>
+
+                                    <td>
+                                        Manuel Reyes
+                                    </td>
+
+                                    <td>
+                                        4to A
+                                    </td>
+
+                                    <td>
+                                        809-555-1075
+                                    </td>
+
+                                    <td>
+
+                                        <span class="document-badge document-warning">
+                                            Sin documentos
+                                        </span>
+
+                                    </td>
+
+                                    <td>
+
+                                        <div class="table-actions">
+
+                                            <button class="btn-edit" type="button" data-action="edit" data-id="2">
+
+                                                Editar
+
+                                            </button>
+
+                                            <button class="btn-delete" type="button" data-action="delete" data-id="2">
+
+                                                Eliminar
+
+                                            </button>
+
+                                        </div>
+
+                                    </td>
+
+                                </tr>
+
+
+                                <!-- CAMILA -->
+
+                                <tr data-student-id="3">
+
+                                    <td>
+
+                                        <div class="student-name-cell">
+
+                                            <div class="student-avatar">
+                                                CN
+                                            </div>
+
+                                            <span>
+                                                Camila Núñez
+                                            </span>
+
+                                        </div>
+
+                                    </td>
+
+                                    <td>
+                                        Rosa Núñez
+                                    </td>
+
+                                    <td>
+                                        5to B
+                                    </td>
+
+                                    <td>
+                                        809-555-1090
+                                    </td>
+
+                                    <td>
+
+                                        <span class="document-badge document-success">
+                                            Con documentos
+                                        </span>
+
+                                    </td>
+
+                                    <td>
+
+                                        <div class="table-actions">
+
+                                            <button class="btn-edit" type="button" data-action="edit" data-id="3">
+
+                                                Editar
+
+                                            </button>
+
+                                            <button class="btn-delete" type="button" data-action="delete" data-id="3">
+
+                                                Eliminar
+
+                                            </button>
+
+                                        </div>
+
+                                    </td>
+
+                                </tr>
+
+
+                                <!-- JOSÉ -->
+
+                                <tr data-student-id="4">
+
+                                    <td>
+
+                                        <div class="student-name-cell">
+
+                                            <div class="student-avatar">
+                                                JA
+                                            </div>
+
+                                            <span>
+                                                José Alejandro Díaz
+                                            </span>
+
+                                        </div>
+
+                                    </td>
+
+                                    <td>
+                                        Ana Díaz
+                                    </td>
+
+                                    <td>
+                                        5to B
+                                    </td>
+
+                                    <td>
+                                        809-555-1002
+                                    </td>
+
+                                    <td>
+
+                                        <span class="document-badge document-warning">
+                                            Sin documentos
+                                        </span>
+
+                                    </td>
+
+                                    <td>
+
+                                        <div class="table-actions">
+
+                                            <button class="btn-edit" type="button" data-action="edit" data-id="4">
+
+                                                Editar
+
+                                            </button>
+
+                                            <button class="btn-delete" type="button" data-action="delete" data-id="4">
+
+                                                Eliminar
+
+                                            </button>
+
+                                        </div>
+
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+
+                        <!-- SIN RESULTADOS -->
+
+                        <div class="empty-state" id="empty-state" hidden>
+
+                            <i data-lucide="search-x"></i>
+
+                            <h3>
+                                No se encontraron estudiantes
+                            </h3>
+
+                            <p>
+                                No apareció ningún resultado con la búsqueda realizada.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- =====================================================
+         MODAL: NUEVO / EDITAR ESTUDIANTE
+    ====================================================== -->
+
+    <div class="modal-overlay" id="student-modal" hidden>
+
+        <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="student-modal-title">
+
+            <div class="modal-header">
+
+                <div>
+
+                    <span class="modal-kicker">
+                        Registro académico
+                    </span>
+
+                    <h2 id="student-modal-title">
+                        Nuevo estudiante
+                    </h2>
+
+                    <p>
+                        Completa los datos del estudiante y del tutor responsable.
+                    </p>
+
+                </div>
+
+                <button class="modal-close" id="student-modal-close" type="button" aria-label="Cerrar">
+
+                    <i data-lucide="x"></i>
+
+                </button>
+
+            </div>
+
+
+            <form id="student-form" novalidate>
+
+                <input type="hidden" id="student-id" value="">
+
+
+                <!-- DATOS DEL ESTUDIANTE -->
+
+                <div class="form-section">
+
+                    <div class="form-section-title">
+
+                        <i data-lucide="user"></i>
+
+                        <div>
+                            <h3>
+                                Datos del estudiante
+                            </h3>
+
+                            <p>
+                                Información básica del estudiante.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+                        <div class="form-group form-group-full">
+
+                            <label for="student-name">
+                                Nombre <span>*</span>
+                            </label>
+
+                            <input type="text" id="student-name" required autocomplete="given-name"
+                                placeholder="Ej. Sofía">
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="student-last-name">
+                                Apellidos <span>*</span>
+                            </label>
+
+                            <input type="text" id="student-last-name" required autocomplete="family-name"
+                                placeholder="Ej. Martínez">
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="student-birth-date">
+                                Fecha de nacimiento <span>*</span>
+                            </label>
+
+                            <input type="date" id="student-birth-date" required>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="student-sex">
+                                Sexo <span>*</span>
+                            </label>
+
+                            <select id="student-sex" required>
+
+                                <option value="">
+                                    Seleccionar
+                                </option>
+
+                                <option value="Femenino">
+                                    Femenino
+                                </option>
+
+                                <option value="Masculino">
+                                    Masculino
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="student-phone">
+                                Teléfono <span>*</span>
+                            </label>
+
+                            <input type="tel" id="student-phone" required placeholder="809-555-0000">
+
+                        </div>
+
+
+                        <div class="form-group form-group-full">
+
+                            <label for="student-address">
+                                Dirección <span>*</span>
+                            </label>
+
+                            <input type="text" id="student-address" required autocomplete="street-address"
+                                placeholder="Dirección del estudiante">
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="student-shift">
+                                Tanda <span>*</span>
+                            </label>
+
+                            <select id="student-shift" required>
+
+                                <option value="">
+                                    Seleccionar
+                                </option>
+
+                                <option value="Matutina">
+                                    Matutina
+                                </option>
+
+                                <option value="Vespertina">
+                                    Vespertina
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- DATOS DEL TUTOR -->
+
+                <div class="form-section">
+
+                    <div class="form-section-title">
+
+                        <i data-lucide="users"></i>
+
+                        <div>
+                            <h3>
+                                Tutor responsable
+                            </h3>
+
+                            <p>
+                                Datos del adulto responsable del estudiante.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+
+                            <label for="tutor-name">
+                                Nombre del tutor <span>*</span>
+                            </label>
+
+                            <input type="text" id="tutor-name" required autocomplete="name"
+                                placeholder="Nombre completo">
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="tutor-relationship">
+                                Parentesco <span>*</span>
+                            </label>
+
+                            <select id="tutor-relationship" required>
+
+                                <option value="">
+                                    Seleccionar
+                                </option>
+
+                                <option value="Madre">
+                                    Madre
+                                </option>
+
+                                <option value="Padre">
+                                    Padre
+                                </option>
+
+                                <option value="Tutor legal">
+                                    Tutor legal
+                                </option>
+
+                                <option value="Abuelo/a">
+                                    Abuelo/a
+                                </option>
+
+                                <option value="Otro familiar">
+                                    Otro familiar
+                                </option>
+
+                                <option value="Otro">
+                                    Otro
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- MENSAJE -->
+
+                <div class="form-message" id="form-message" hidden>
+                </div>
+
+
+                <!-- ACCIONES -->
+
+                <div class="modal-actions">
+
+                    <button class="btn-secondary" id="student-cancel-btn" type="button">
+
+                        Cancelar
+
+                    </button>
+
+                    <button class="btn-primary" type="submit">
+
+                        <i data-lucide="save"></i>
+
+                        <span id="student-submit-text">
+                            Guardar estudiante
+                        </span>
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         MODAL: CONFIRMACIÓN DE ELIMINACIÓN
+    ====================================================== -->
+
+    <div class="modal-overlay" id="delete-modal" hidden>
+
+        <div class="confirm-card" role="dialog" aria-modal="true" aria-labelledby="delete-modal-title">
+
+            <div class="confirm-icon">
+
+                <i data-lucide="triangle-alert"></i>
+
+            </div>
+
+            <h2 id="delete-modal-title">
+                ¿Eliminar estudiante?
+            </h2>
+
+            <p>
+                Estás a punto de eliminar a
+                <strong id="delete-student-name"></strong>.
+            </p>
+
+            <p class="confirm-warning">
+                Esta acción también borraría su información relacionada,
+                incluyendo tutores vinculados, matrículas y calificaciones.
+            </p>
+
+            <div class="modal-actions">
+
+                <button class="btn-secondary" id="delete-cancel-btn" type="button">
+
+                    Cancelar
+
+                </button>
+
+                <button class="btn-danger" id="delete-confirm-btn" type="button">
+
+                    <i data-lucide="trash-2"></i>
+
+                    Eliminar estudiante
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         SCRIPTS
+    ====================================================== -->
+
+    <script src="navegacion.js"></script>
+    <script src="fecha.js"></script>
+    <script src="estudiantes-tutores.js"></script>
+
+    <script>
+        lucide.createIcons();
+    </script>
+
+</body>
+
+</html>

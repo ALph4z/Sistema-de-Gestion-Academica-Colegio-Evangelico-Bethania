@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EduBethania - Carga docente</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Fecha, hora y año escolar -->
+    <script src="fecha.js"></script>
+    <script src="navegacion.js"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <link rel="stylesheet" href="carga-docente.css">
+</head>
+
+<body>
+
+    <div class="app-layout">
+
+        <!-- =====================================================
+             BARRA LATERAL
+             ===================================================== -->
+        <aside class="sidebar">
+
+            <div class="sidebar-header">
+
+                <div class="brand-logo">
+                    <i data-lucide="graduation-cap" class="brand-icon"></i>
+
+                    <div>
+                        <h2 class="brand-title">EduBethania</h2>
+                        <span class="brand-subtitle">Sistema Académico</span>
+                    </div>
+                </div>
+
+                <div class="profile-selector-box">
+                    <label class="profile-label">Perfil demostrativo</label>
+
+                    <select class="profile-select">
+                        <option value="Administración" selected>Administración</option>
+                        <option value="Docente">Docente</option>
+                        <option value="Tutor">Tutor</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <nav class="sidebar-nav">
+
+                <a href="dashboard.html" class="nav-item">
+                    <i data-lucide="layout-grid"></i>
+                    <span>Panel principal</span>
+                </a>
+
+                <a href="estudiantes-tutores.html" class="nav-item">
+                    <i data-lucide="users"></i>
+                    <span>Estudiantes y tutores</span>
+                </a>
+
+                <a href="matricula-expediente.html" class="nav-item">
+                    <i data-lucide="file-check"></i>
+                    <span>Matrícula y documentos</span>
+                </a>
+
+                <a href="cajas-pagos.html" class="nav-item">
+                    <i data-lucide="wallet"></i>
+                    <span>Caja y pagos</span>
+                </a>
+
+                <a href="configuracion-academica.html" class="nav-item">
+                    <i data-lucide="sliders"></i>
+                    <span>Configuración académica</span>
+                </a>
+
+                <a href="carga-docente.html" class="nav-item active">
+                    <i data-lucide="monitor-play"></i>
+                    <span>Carga docente</span>
+                </a>
+
+                <a href="calificaciones.html" class="nav-item">
+                    <i data-lucide="award"></i>
+                    <span>Calificaciones</span>
+                </a>
+
+                <a href="portal-tutor.html" class="nav-item">
+                    <i data-lucide="heart"></i>
+                    <span>Portal tutor</span>
+                </a>
+
+                <a href="login.html" class="nav-item logout-item">
+                    <i data-lucide="log-out"></i>
+                    <span>Cerrar sesión</span>
+                </a>
+
+            </nav>
+
+            <div class="sidebar-footer">
+                <p>Colegio Evangélico Bethania · San Pedro de Macorís</p>
+            </div>
+
+        </aside>
+
+        <!-- OVERLAY PARA MENÚ MÓVIL -->
+        <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+        <!-- =====================================================
+             CONTENIDO PRINCIPAL
+             ===================================================== -->
+        <main class="main-content">
+
+            <!-- HEADER -->
+            <header class="top-header">
+
+                <div class="header-content">
+                    <span class="period-tag" id="school-year">Año escolar 2026–2027</span>
+                    <h1 class="page-title">Carga docente</h1>
+                </div>
+
+                <div class="header-meta">
+                    <span class="current-date" id="current-date"></span>
+                    <span class="view-tag">Vista de Administración</span>
+                </div>
+
+                <!-- MENÚ MÓVIL -->
+                <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
+                    <i data-lucide="menu"></i>
+                </button>
+
+            </header>
+
+            <!-- =================================================
+                 CONTENIDO DE CARGA DOCENTE
+                 ================================================= -->
+            <section class="page-section">
+
+                <div class="section-header">
+
+                    <div class="section-heading">
+                        <h2 class="section-title">Carga docente</h2>
+
+                        <p class="section-description">
+                            Asigna materias, secciones y organiza a los responsables del aula.
+                        </p>
+                    </div>
+
+                    <button class="btn-primary" id="open-assignment-modal">
+                        <span>+ Asignar docente</span>
+                    </button>
+
+                </div>
+
+                <!-- MENSAJE GENERAL -->
+                <div class="page-message" id="page-message"></div>
+
+                <!-- =================================================
+                     TABLA DE DOCENTES
+                     ================================================= -->
+                <section class="teachers-card">
+
+                    <div class="table-container">
+
+                        <table class="data-table teachers-table">
+
+                            <thead>
+                                <tr>
+                                    <th>DOCENTE</th>
+                                    <th>MATERIA</th>
+                                    <th>GRADO</th>
+                                    <th>TANDA</th>
+                                    <th>ESTADO</th>
+                                    <th>ACCIONES</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="assignments-body">
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                    <!-- ESTADO VACÍO -->
+                    <div class="empty-state" id="empty-state">
+                        <i data-lucide="clipboard-list"></i>
+
+                        <h3>No hay asignaciones docentes</h3>
+
+                        <p>
+                            Crea una asignación para relacionar un docente
+                            con una sección y una materia.
+                        </p>
+                    </div>
+
+                </section>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- =========================================================
+         MODAL ASIGNAR / EDITAR DOCENTE
+         ========================================================= -->
+    <div class="modal-overlay" id="assignment-modal">
+
+        <div class="modal-card">
+
+            <div class="modal-header">
+
+                <div>
+                    <h2 id="modal-title">Asignar docente</h2>
+
+                    <p>
+                        Registra la asignación del docente a una sección y materia.
+                    </p>
+                </div>
+
+                <button
+                    type="button"
+                    class="modal-close"
+                    id="close-assignment-modal"
+                    aria-label="Cerrar">
+                    <i data-lucide="x"></i>
+                </button>
+
+            </div>
+
+
+            <form id="assignment-form">
+
+                <div class="form-grid">
+
+                    <!-- DOCENTE -->
+                    <div class="form-group">
+
+                        <label for="teacher-select">
+                            Docente
+                        </label>
+
+                        <select id="teacher-select" required>
+                            <option value="">Selecciona un docente</option>
+                        </select>
+
+                    </div>
+
+
+                    <!-- MATERIA -->
+                    <div class="form-group">
+
+                        <label for="subject-select">
+                            Materia
+                        </label>
+
+                        <select id="subject-select" required>
+                            <option value="">Selecciona una materia</option>
+                        </select>
+
+                    </div>
+
+
+                    <!-- GRADO / SECCIÓN -->
+                    <div class="form-group">
+
+                        <label for="level-select">
+                            Grado / sección
+                        </label>
+
+                        <select id="level-select" required>
+                            <option value="">Selecciona un grado y sección</option>
+                        </select>
+
+                    </div>
+
+
+                    <!-- TANDA -->
+                    <div class="form-group">
+
+                        <label for="shift-select">
+                            Tanda
+                        </label>
+
+                        <select id="shift-select" required>
+
+                            <option value="">
+                                Selecciona una tanda
+                            </option>
+
+                            <option value="Matutina">
+                                Matutina
+                            </option>
+
+                            <option value="Vespertina">
+                                Vespertina
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PERÍODO -->
+                <div class="active-period-box">
+
+                    <div class="period-icon">
+                        <i data-lucide="calendar-days"></i>
+                    </div>
+
+                    <div>
+                        <span class="period-label">
+                            Período escolar activo
+                        </span>
+
+                        <strong id="active-period-label">
+                            2026–2027
+                        </strong>
+                    </div>
+
+                </div>
+
+
+                <!-- MENSAJE DEL FORMULARIO -->
+                <div
+                    class="form-message"
+                    id="assignment-form-message">
+                </div>
+
+
+                <!-- ACCIONES -->
+                <div class="modal-actions">
+
+                    <button
+                        type="button"
+                        class="btn-secondary"
+                        id="cancel-assignment">
+                        Cancelar
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="btn-primary">
+                        Guardar asignación
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         MODAL CONFIRMACIÓN DE DESACTIVAR / ACTIVAR
+         ========================================================= -->
+    <div class="modal-overlay" id="status-modal">
+
+        <div class="modal-card modal-card-small">
+
+            <div class="modal-header">
+
+                <div>
+                    <h2 id="status-modal-title">
+                        Desactivar asignación
+                    </h2>
+
+                    <p id="status-modal-description">
+                        La asignación permanecerá registrada.
+                    </p>
+                </div>
+
+                <button
+                    type="button"
+                    class="modal-close"
+                    id="close-status-modal"
+                    aria-label="Cerrar">
+                    <i data-lucide="x"></i>
+                </button>
+
+            </div>
+
+
+            <div class="status-confirmation">
+
+                <div class="confirmation-icon">
+                    <i data-lucide="power"></i>
+                </div>
+
+                <p id="status-confirmation-text">
+                    ¿Deseas desactivar esta asignación?
+                </p>
+
+            </div>
+
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="btn-secondary"
+                    id="cancel-status">
+                    Cancelar
+                </button>
+
+                <button
+                    type="button"
+                    class="btn-primary"
+                    id="confirm-status">
+                    Confirmar
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         TOAST
+         ========================================================= -->
+    <div class="toast" id="toast">
+
+        <div class="toast-icon">
+            <i data-lucide="check-circle"></i>
+        </div>
+
+        <div>
+            <strong id="toast-title">Listo</strong>
+            <p id="toast-message"></p>
+        </div>
+
+    </div>
+
+
+    <script src="carga-docente.js"></script>
+
+</body>
+
+</html>
