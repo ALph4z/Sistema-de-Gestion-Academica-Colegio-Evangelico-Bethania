@@ -10,9 +10,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="fecha.js"></script>
+    <script src="navegacion.js"></script>
     <link rel="stylesheet" href="dashboard.css">
 </head>
 <body>
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
 
     <div class="app-layout">
         <!-- BARRA LATERAL (SIDEBAR) -->
@@ -30,7 +32,6 @@
                     <label class="profile-label">Perfil demostrativo</label>
                     <select class="profile-select">
                         <option value="Administración" selected>Administración</option>
-                        <option value="Secretaría">Secretaría</option>
                         <option value="Docente">Docente</option>
                         <option value="Tutor">Tutor</option>
                     </select>
@@ -95,6 +96,9 @@
                     <span class="current-date" id="current-date"></span>
                     <span class="view-tag">Vista de Administración</span>
                 </div>
+                <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
+                <i data-lucide="menu"></i>
+    </button>
             </header>
 
             <!-- BIENVENIDA Y BOTÓN PRINCIPAL -->
@@ -103,10 +107,10 @@
                     <h2 class="welcome-title">Buenos días, equipo Bethania</h2>
                     <p class="welcome-desc">Una vista clara del proceso de matrícula, la documentación y la gestión académica del período vigente.</p>
                 </div>
-                <button class="btn-primary">
+                <a href="matricula-expediente.html" class="btn-primary">
                     <i data-lucide="user-plus"></i>
                     <span>Registrar estudiante</span>
-                </button>
+                </a>
             </section>
 
             <!-- TARJETAS DE MÉTRICAS (KPIs) -->
@@ -205,13 +209,15 @@
                     </div>
 
                     <div class="actions-list">
-                        <button class="btn-action">
+                        
+                        <a href="cajas-pagos.html" class="btn-primary">
                             <span>Registrar cobro</span>
-                        </button>
-                        <button class="btn-action">
+                        </a>
+                        
+                        <a href="calificaciones.html" class="btn-primary">
                             <i data-lucide="pencil"></i>
                             <span>Registrar calificaciones</span>
-                        </button>
+                        </a>                        
                     </div>
                 </section>
             </div>
@@ -221,6 +227,7 @@
     <!-- Inicializar Iconos de Lucide -->
     <script>
         lucide.createIcons();
+
     </script>
 </body>
 </html>

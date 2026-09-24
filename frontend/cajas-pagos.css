@@ -24,11 +24,6 @@
     --badge-warning-text: #8A6100;
 }
 
-
-/* =========================================================
-   RESET
-   ========================================================= */
-
 * {
     margin: 0;
     padding: 0;
@@ -36,10 +31,11 @@
     font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
-
-/* =========================================================
-   BODY
-   ========================================================= */
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
 
 body {
     background-color: var(--main-bg);
@@ -47,735 +43,792 @@ body {
     min-height: 100vh;
 }
 
-
-/* =========================================================
-   APP LAYOUT
-   ========================================================= */
-
 .app-layout {
     display: flex;
     min-height: 100vh;
+    width: 100%;
 }
-
-
-/* =========================================================
-   SIDEBAR
-   ========================================================= */
 
 .sidebar {
     width: 260px;
-
+    min-width: 260px;
     background-color: var(--sidebar-bg);
     color: #FFFFFF;
-
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
     padding: 24px 16px;
-
     flex-shrink: 0;
+    min-height: 100vh;
 }
-
-
-/* =========================================================
-   LOGO
-   ========================================================= */
 
 .brand-logo {
     display: flex;
     align-items: center;
-
     gap: 10px;
-
     margin-bottom: 20px;
 }
-
 
 .brand-icon {
     width: 28px;
     height: 28px;
-
     color: #FFFFFF;
+    flex-shrink: 0;
 }
-
 
 .brand-title {
     font-size: 1.25rem;
     font-weight: 700;
-
     line-height: 1.1;
 }
 
-
 .brand-subtitle {
     font-size: 0.75rem;
-
     opacity: 0.8;
 }
-
-
-/* =========================================================
-   SELECTOR DE PERFIL
-   ========================================================= */
 
 .profile-selector-box {
     background: rgba(0, 0, 0, 0.15);
-
     padding: 10px 12px;
-
     border-radius: 8px;
-
     margin-bottom: 20px;
 }
 
-
 .profile-label {
     display: block;
-
     font-size: 0.7rem;
-
     opacity: 0.8;
-
     margin-bottom: 4px;
 }
 
-
 .profile-select {
     width: 100%;
-
     background: transparent;
-
     border: none;
-
     color: #FFFFFF;
-
     font-size: 0.85rem;
-
     font-weight: 600;
-
     outline: none;
-
     cursor: pointer;
 }
 
-
 .profile-select option {
     background-color: var(--sidebar-bg);
-
     color: #FFFFFF;
 }
-
-
-/* =========================================================
-   SIDEBAR NAV
-   ========================================================= */
 
 .sidebar-nav {
     display: flex;
-
     flex-direction: column;
-
     gap: 4px;
 }
 
-
 .nav-item {
     display: flex;
-
     align-items: center;
-
     gap: 12px;
-
     padding: 10px 12px;
-
     color: #E2D1D4;
-
     text-decoration: none;
-
     font-size: 0.85rem;
-
     font-weight: 500;
-
     border-radius: 8px;
-
     transition: all 0.2s;
 }
 
-
 .nav-item i {
     width: 18px;
-
     height: 18px;
-
     flex-shrink: 0;
 }
 
-
 .nav-item:hover {
     background-color: var(--sidebar-hover);
-
     color: #FFFFFF;
 }
-
 
 .nav-item.active {
     background-color: var(--sidebar-active);
-
     color: #FFFFFF;
-
     font-weight: 600;
 }
-
-
-/* =========================================================
-   SIDEBAR FOOTER
-   ========================================================= */
 
 .sidebar-footer {
     font-size: 0.7rem;
-
     opacity: 0.7;
-
     line-height: 1.4;
-
     padding-top: 20px;
-
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+.menu-toggle {
+    display: none;
+    width: 42px;
+    height: 42px;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--brand-burgundy);
+    color: #FFFFFF;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    flex-shrink: 0;
+}
 
-/* =========================================================
-   MAIN CONTENT
-   IGUAL AL DASHBOARD
-   ========================================================= */
+.menu-toggle:hover {
+    background-color: var(--sidebar-bg);
+}
+
+.menu-toggle i {
+    width: 21px;
+    height: 21px;
+}
+
+.sidebar-overlay {
+    display: none;
+}
 
 .main-content {
     flex-grow: 1;
-
+    min-width: 0;
     padding: 32px 40px;
-
+    overflow-x: hidden;
     overflow-y: auto;
 }
 
-
-/* =========================================================
-   HEADER SUPERIOR
-   IGUAL AL DASHBOARD
-   ========================================================= */
-
 .top-header {
     display: flex;
-
     justify-content: space-between;
-
     align-items: flex-start;
-
     margin-bottom: 24px;
+    gap: 20px;
 }
 
+.header-content {
+    min-width: 0;
+}
 
 .period-tag {
     font-size: 0.75rem;
-
     font-weight: 700;
-
     letter-spacing: 0.5px;
-
     color: #8A8A8A;
 }
 
-
 .page-title {
     font-size: 1.5rem;
-
     font-weight: 700;
-
     color: var(--text-dark);
 }
 
-
 .header-meta {
     display: flex;
-
     flex-direction: column;
-
     align-items: flex-end;
-
     font-size: 0.75rem;
-
     color: var(--text-muted);
-}
-
-
-.current-date {
     white-space: nowrap;
 }
 
-
 .view-tag {
     color: var(--brand-burgundy);
-
     font-weight: 600;
 }
-
-
-/* =========================================================
-   CONTENIDO DE CAJA
-   ========================================================= */
 
 .page-section {
     width: 100%;
 }
 
-
-/* =========================================================
-   ENCABEZADO DE SECCIÓN
-   ========================================================= */
-
 .section-header {
     display: flex;
-
     justify-content: space-between;
-
     align-items: flex-start;
-
     margin-bottom: 24px;
+    gap: 20px;
 }
-
 
 .section-heading {
     display: flex;
-
     flex-direction: column;
+    min-width: 0;
 }
-
 
 .section-title {
     font-size: 1.15rem;
-
     font-weight: 700;
-
     color: var(--text-dark);
-
     line-height: 1.25;
 }
 
-
 .section-description {
     margin-top: 4px;
-
     font-size: 0.8rem;
-
     color: var(--text-muted);
-
     line-height: 1.4;
 }
 
-
-/* =========================================================
-   BOTÓN PRINCIPAL
-   ========================================================= */
-
 .btn-primary {
     background-color: var(--brand-burgundy);
-
     color: #FFFFFF;
-
     border: none;
-
     padding: 10px 18px;
-
     border-radius: 8px;
-
     font-size: 0.85rem;
-
     font-weight: 600;
-
     display: flex;
-
     align-items: center;
-
     gap: 8px;
-
     cursor: pointer;
-
     transition: background-color 0.2s;
-
     white-space: nowrap;
+    flex-shrink: 0;
 }
-
 
 .btn-primary:hover {
     background-color: var(--sidebar-bg);
 }
 
-
 .btn-primary i {
     width: 16px;
-
     height: 16px;
 }
 
-
-/* =========================================================
-   TARJETA DE PAGOS
-   ========================================================= */
-
 .payments-card {
     width: 100%;
-
     background-color: var(--card-bg);
-
     border: 1px solid var(--border-color);
-
     border-radius: 12px;
-
     overflow: hidden;
 }
 
-
-/* =========================================================
-   TABLA
-   ========================================================= */
-
 .table-container {
     width: 100%;
-
     overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
 }
-
 
 .data-table {
     width: 100%;
-
     border-collapse: collapse;
-
     text-align: left;
-
     font-size: 0.8rem;
 }
-
 
 .payments-table {
     table-layout: fixed;
 }
 
-
-/* =========================================================
-   ANCHO COLUMNAS
-   ========================================================= */
-
 .payments-table th:nth-child(1),
-.payments-table td:nth-child(1) {
-    width: 14%;
-}
-
+.payments-table td:nth-child(1) { width: 14%; }
 
 .payments-table th:nth-child(2),
-.payments-table td:nth-child(2) {
-    width: 16%;
-}
-
+.payments-table td:nth-child(2) { width: 16%; }
 
 .payments-table th:nth-child(3),
-.payments-table td:nth-child(3) {
-    width: 14%;
-}
-
+.payments-table td:nth-child(3) { width: 14%; }
 
 .payments-table th:nth-child(4),
-.payments-table td:nth-child(4) {
-    width: 16%;
-}
-
+.payments-table td:nth-child(4) { width: 16%; }
 
 .payments-table th:nth-child(5),
-.payments-table td:nth-child(5) {
-    width: 13%;
-}
-
+.payments-table td:nth-child(5) { width: 13%; }
 
 .payments-table th:nth-child(6),
-.payments-table td:nth-child(6) {
-    width: 13%;
-}
-
+.payments-table td:nth-child(6) { width: 13%; }
 
 .payments-table th:nth-child(7),
-.payments-table td:nth-child(7) {
-    width: 10%;
-}
-
-
-/* =========================================================
-   HEADER TABLA
-   ========================================================= */
+.payments-table td:nth-child(7) { width: 10%; }
 
 .data-table th {
     color: #8A8A8A;
-
     font-size: 0.7rem;
-
     font-weight: 700;
-
     padding: 12px 18px;
-
     border-bottom: 1px solid var(--border-color);
-
     white-space: nowrap;
 }
 
-
-/* =========================================================
-   CELDAS
-   ========================================================= */
-
 .data-table td {
     padding: 13px 18px;
-
     border-bottom: 1px solid var(--border-color);
-
     color: #3B3B3B;
-
     vertical-align: middle;
 }
-
 
 .data-table tbody tr:last-child td {
     border-bottom: none;
 }
 
-
-/* =========================================================
-   CÓDIGO
-   ========================================================= */
-
 .payment-code {
     font-size: 0.72rem;
-
     color: #52627A !important;
 }
 
-
-/* =========================================================
-   ESTUDIANTE
-   ========================================================= */
-
 .student-name {
     color: var(--text-dark) !important;
-
     font-weight: 600;
 }
-
-
-/* =========================================================
-   MONTO
-   ========================================================= */
 
 .payment-amount {
     color: var(--brand-burgundy) !important;
-
     font-weight: 700;
 }
 
-
-/* =========================================================
-   BADGES
-   ========================================================= */
-
 .badge {
     display: inline-block;
-
     padding: 4px 10px;
-
     border-radius: 12px;
-
     font-size: 0.7rem;
-
     font-weight: 600;
 }
-
 
 .badge-success {
     background-color: var(--badge-success-bg);
-
     color: var(--badge-success-text);
 }
 
-
 .badge-warning {
     background-color: var(--badge-warning-bg);
-
     color: var(--badge-warning-text);
 }
 
-
-/* =========================================================
-   BOTÓN VER
-   ========================================================= */
-
 .btn-view {
     background-color: var(--brand-burgundy);
-
     color: #FFFFFF;
-
     border: none;
-
     padding: 5px 10px;
-
     border-radius: 5px;
-
     font-family: 'Plus Jakarta Sans', sans-serif;
-
     font-size: 0.7rem;
-
     font-weight: 600;
-
     cursor: pointer;
-
     transition: background-color 0.2s;
 }
-
 
 .btn-view:hover {
     background-color: var(--sidebar-bg);
 }
 
-
-/* =========================================================
-   TOTAL
-   ========================================================= */
-
 .payments-total {
     display: flex;
-
     justify-content: space-between;
-
     align-items: center;
-
     padding: 16px 18px;
-
     border-top: 1px solid var(--border-color);
 }
 
-
 .total-label {
     font-size: 0.8rem;
-
     color: #6E6E6E;
 }
 
-
 .total-value {
     font-size: 1rem;
-
     color: var(--brand-burgundy);
-
     font-weight: 700;
 }
 
-
 /* =========================================================
-   RESPONSIVE
+   MODALES DE CAJA
    ========================================================= */
 
-@media (max-width: 1100px) {
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1500;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(42, 24, 29, 0.45);
+}
 
+.modal-overlay.active {
+    display: flex;
+}
+
+.payment-modal {
+    width: 100%;
+    max-width: 520px;
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
+    background: #FFFFFF;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.14);
+}
+
+.payment-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.payment-modal-header h2 {
+    font-size: 0.95rem;
+    font-weight: 700;
+}
+
+.payment-modal-header p {
+    margin-top: 4px;
+    color: var(--text-muted);
+    font-size: 0.7rem;
+    line-height: 1.5;
+}
+
+.modal-close {
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 7px;
+    background: #F8F5F2;
+    color: var(--text-muted);
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.modal-close:hover {
+    background: #EFE9E5;
+    color: var(--text-dark);
+}
+
+.payment-modal-body {
+    padding: 20px;
+}
+
+.payment-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 16px;
+}
+
+.payment-form-group label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.payment-form-group select,
+.payment-form-group input {
+    width: 100%;
+    min-height: 40px;
+    padding: 9px 11px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: #FFFFFF;
+    color: var(--text-dark);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.75rem;
+    outline: none;
+}
+
+.payment-form-group select:focus,
+.payment-form-group input:focus {
+    border-color: var(--brand-burgundy);
+    box-shadow: 0 0 0 2px rgba(122, 28, 40, 0.08);
+}
+
+.payment-form-group small {
+    color: var(--text-muted);
+    font-size: 0.65rem;
+    line-height: 1.4;
+}
+
+.payment-form-message {
+    display: none;
+    padding: 10px 12px;
+    border-radius: 8px;
+    background: #FDE7E7;
+    color: #A52A2A;
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+.payment-form-message.visible {
+    display: block;
+}
+
+.payment-modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    padding: 16px 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+.btn-secondary {
+    background: #FFFFFF;
+    color: var(--text-dark);
+    border: 1px solid var(--border-color);
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-secondary:hover {
+    background: #F8F5F2;
+}
+
+/* =========================================================
+   DETALLE DEL COMPROBANTE
+   ========================================================= */
+
+.receipt-detail-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.receipt-detail-grid > div {
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+}
+
+.receipt-detail-grid span {
+    display: block;
+    margin-bottom: 4px;
+    color: var(--text-muted);
+    font-size: 0.65rem;
+}
+
+.receipt-detail-grid strong {
+    display: block;
+    color: var(--text-dark);
+    font-size: 0.75rem;
+}
+
+.toast {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 2000;
+    max-width: 380px;
+    padding: 12px 16px;
+    border: 1px solid #CFE8D9;
+    border-radius: 8px;
+    background: #FFFFFF;
+    color: var(--badge-success-text);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    font-size: 0.75rem;
+    font-weight: 600;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(10px);
+    transition: opacity 0.2s, transform 0.2s;
+}
+
+.toast.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+@media (max-width: 1100px) {
     .main-content {
-        padding: 32px 40px;
+        padding: 28px;
     }
 
     .payments-table {
         min-width: 900px;
-
         table-layout: auto;
     }
-
 }
 
-
-@media (max-width: 800px) {
-
-    .app-layout {
-        flex-direction: column;
-    }
-
-
-    .sidebar {
-        width: 100%;
-
-        min-height: auto;
-
-        padding: 20px 16px;
-    }
-
-
-    .sidebar-nav {
-        margin-top: 10px;
-    }
-
-
-    .sidebar-footer {
-        margin-top: 20px;
-    }
-
-
-    .main-content {
-        padding: 24px 20px;
-    }
-
-
+@media (max-width: 700px) {
     .top-header {
-        flex-direction: column;
-
-        gap: 12px;
+        position: relative;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 15px;
+        margin-bottom: 24px;
+        padding: 0;
     }
 
+    .header-content {
+        min-width: 0;
+        flex: 1;
+    }
+
+    .menu-toggle {
+        display: flex;
+        position: relative;
+        width: 42px;
+        min-width: 42px;
+        height: 42px;
+        margin-top: 0;
+    }
+
+    .period-tag {
+        display: block;
+        font-size: 0.68rem;
+        line-height: 1.3;
+        margin-bottom: 2px;
+    }
+
+    .page-title {
+        font-size: 1.25rem;
+        line-height: 1.3;
+    }
 
     .header-meta {
+        display: flex;
+        flex-direction: column;
         align-items: flex-start;
+        gap: 2px;
+        font-size: 0.68rem;
+        line-height: 1.3;
+        white-space: normal;
     }
 
+    .main-content {
+        width: 100%;
+        min-width: 0;
+        padding: 24px 18px;
+        overflow-x: hidden;
+    }
+
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 270px;
+        min-width: 270px;
+        height: 100vh;
+        min-height: 100vh;
+        transform: translateX(-100%);
+        transition: transform 0.25s ease;
+        z-index: 1300;
+        overflow-y: auto;
+        box-shadow: 8px 0 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .sidebar.open {
+        transform: translateX(0);
+    }
+
+    .sidebar-overlay {
+        position: fixed;
+        inset: 0;
+        display: none;
+        background: rgba(0, 0, 0, 0.35);
+        z-index: 1250;
+    }
+
+    .sidebar-overlay.active {
+        display: block;
+    }
 
     .section-header {
         flex-direction: column;
-
+        align-items: stretch;
         gap: 16px;
     }
 
-
-    .btn-primary {
-        align-self: flex-start;
+    .section-header .btn-primary {
+        width: 100%;
+        justify-content: center;
     }
 
-}
-
-
-@media (max-width: 500px) {
-
-    .main-content {
-        padding: 20px 16px;
+    .payments-table {
+        min-width: 900px;
+        table-layout: auto;
     }
 
-
-    .page-title {
-        font-size: 1.3rem;
+    .data-table th {
+        padding: 10px 16px;
     }
 
-
-    .section-title {
-        font-size: 1rem;
+    .data-table td {
+        padding: 12px 16px;
     }
-
-
-    .section-description {
-        font-size: 0.75rem;
-    }
-
 
     .payments-total {
         padding: 14px;
     }
 
+    .payment-modal {
+        max-height: calc(100vh - 24px);
+    }
+
+    .payment-modal-header,
+    .payment-modal-body,
+    .payment-modal-footer {
+        padding: 16px;
+    }
+
+    .payment-modal-footer {
+        flex-direction: column-reverse;
+    }
+
+    .payment-modal-footer .btn-primary,
+    .payment-modal-footer .btn-secondary {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .receipt-detail-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .toast {
+        right: 14px;
+        bottom: 14px;
+        left: 14px;
+        max-width: none;
+    }
+}
+
+@media (max-width: 400px) {
+    .main-content {
+        padding: 20px 14px;
+    }
+
+    .top-header {
+        gap: 10px;
+    }
+
+    .period-tag {
+        font-size: 0.64rem;
+    }
+
+    .page-title {
+        font-size: 1.15rem;
+    }
+
+    .header-meta {
+        font-size: 0.63rem;
+    }
+
+    .menu-toggle {
+        width: 40px;
+        min-width: 40px;
+        height: 40px;
+    }
+
+    .sidebar {
+        width: 260px;
+        min-width: 260px;
+    }
+
+    .section-title {
+        font-size: 1rem;
+    }
+
+    .section-description {
+        font-size: 0.75rem;
+    }
+
+    .payments-total {
+        padding: 14px;
+    }
 }
