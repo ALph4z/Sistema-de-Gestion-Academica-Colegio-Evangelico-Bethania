@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+.env
+.venv/
+venv/
+.DS_Store
+# La base de datos de trabajo no debe versionarse: se crea con database/bethania_sqlite.sql
+# (si quieres conservar datos de demo, quita la línea de abajo)
+database/bethania.db
