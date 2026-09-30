@@ -28,9 +28,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const MIN_GRADE = 0;
 
-    const MAX_GRADE = 20;
+    const MAX_GRADE = 100;
 
-    const PASSING_GRADE = 10;
+    const PASSING_GRADE = 70;
 
 
     const DEFAULT_PERIOD = {
