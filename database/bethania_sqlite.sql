@@ -178,11 +178,15 @@ CREATE TABLE calificaciones (
     id_estudiante INTEGER NOT NULL,
     id_asignatura INTEGER NOT NULL,
     id_periodo INTEGER NOT NULL,
-    calificacion REAL NOT NULL,
+    trimestre TEXT NOT NULL CHECK (trimestre IN ('1ro', '2do', '3ro')),
+    calificacion REAL NOT NULL CHECK (calificacion >= 0 AND calificacion <= 100),
     fecha_registro TEXT DEFAULT CURRENT_TIMESTAMP,
+
     FOREIGN KEY (id_estudiante) REFERENCES estudiantes(id_estudiante),
     FOREIGN KEY (id_asignatura) REFERENCES asignaturas(id_asignatura),
-    FOREIGN KEY (id_periodo) REFERENCES periodos_escolares(id_periodo)
+    FOREIGN KEY (id_periodo) REFERENCES periodos_escolares(id_periodo),
+
+    UNIQUE (id_estudiante, id_asignatura, id_periodo, trimestre)
 );
 
 INSERT INTO roles (nombre_rol) VALUES
