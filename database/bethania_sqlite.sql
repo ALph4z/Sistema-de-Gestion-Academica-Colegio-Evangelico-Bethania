@@ -85,7 +85,7 @@ CREATE TABLE estudiante_tutor (
 CREATE TABLE cursos (
     id_curso INTEGER PRIMARY KEY AUTOINCREMENT,
     nombre TEXT NOT NULL,
-    nivel TEXT NOT NULL CHECK (nivel IN ('Inicial', 'Básica', 'Media'))
+    nivel TEXT NOT NULL CHECK (nivel IN ('Inicial', 'Primario', 'Secundario'))
 );
 
 CREATE TABLE secciones (
