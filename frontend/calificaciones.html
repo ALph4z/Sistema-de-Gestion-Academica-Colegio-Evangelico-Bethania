@@ -10,8 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
         rel="stylesheet">
 
     <script src="fecha.js"></script>
@@ -35,9 +34,7 @@
 
                 <div class="brand-logo">
 
-                    <i
-                        data-lucide="graduation-cap"
-                        class="brand-icon">
+                    <i data-lucide="graduation-cap" class="brand-icon">
                     </i>
 
                     <div>
@@ -59,11 +56,9 @@
                         Perfil demostrativo
                     </label>
 
-                    <select
-                        class="profile-select"
-                        id="profile-select">
+                    <select class="profile-select" id="roleSelect" name="rol">
 
-                        <option value="Administrador">
+                        <option value="Administración">
                             Administrador
                         </option>
 
@@ -84,140 +79,66 @@
 
             <nav class="sidebar-nav">
 
-                <a
-                    href="dashboard.html"
-                    class="nav-item">
-
+                <a href="dashboard.html" class="nav-item" id="nav-dashboard">
                     <i data-lucide="layout-grid"></i>
-
-                    <span>
-                        Panel principal
-                    </span>
-
+                    <span>Panel principal</span>
                 </a>
 
-
-                <a
-                    href="estudiantes-tutores.html"
-                    class="nav-item">
-
+                <a href="estudiantes-tutores.html" class="nav-item" id="nav-estudiantes">
                     <i data-lucide="users"></i>
-
-                    <span>
-                        Estudiantes y tutores
-                    </span>
-
+                    <span>Estudiantes y tutores</span>
                 </a>
 
-
-                <a
-                    href="matricula-expediente.html"
-                    class="nav-item">
-
+                <a href="matricula-expediente.html" class="nav-item" id="nav-matricula">
                     <i data-lucide="file-check"></i>
-
-                    <span>
-                        Matrícula y documentos
-                    </span>
-
+                    <span>Matrícula y documentos</span>
                 </a>
 
-
-                <a
-                    href="cajas-pagos.html"
-                    class="nav-item">
-
+                <a href="cajas-pagos.html" class="nav-item" id="nav-caja">
                     <i data-lucide="wallet"></i>
-
-                    <span>
-                        Caja y pagos
-                    </span>
-
+                    <span>Caja y pagos</span>
                 </a>
 
-
-                <a
-                    href="configuracion-academica.html"
-                    class="nav-item">
-
+                <a href="configuracion-academica.html" class="nav-item" id="nav-configuracion">
                     <i data-lucide="sliders"></i>
-
-                    <span>
-                        Configuración académica
-                    </span>
-
+                    <span>Configuración académica</span>
                 </a>
 
-
-                <a
-                    href="carga-docente.html"
-                    class="nav-item">
-
+                <a href="carga-docente.html" class="nav-item" id="nav-carga">
                     <i data-lucide="monitor-play"></i>
-
-                    <span>
-                        Carga docente
-                    </span>
-
+                    <span>Carga docente</span>
                 </a>
 
-
-                <a
-                    href="calificaciones.html"
-                    class="nav-item active">
-
+                <a href="calificaciones.html" class="nav-item active" id="nav-calificaciones">
                     <i data-lucide="award"></i>
-
-                    <span>
-                        Calificaciones
-                    </span>
-
+                    <span>Calificaciones</span>
                 </a>
 
-
-                <a
-                    href="portal-tutor.html"
-                    class="nav-item">
-
+                <a href="portal-tutor.html" class="nav-item" id="nav-portal-tutor">
                     <i data-lucide="heart"></i>
-
-                    <span>
-                        Portal tutor
-                    </span>
-
+                    <span>Portal tutor</span>
                 </a>
 
 
-                <a
-                    href="index.html"
-                    class="nav-item logout-item">
-
+                <a href="index.html" class="nav-item logout-item">
                     <i data-lucide="log-out"></i>
-
-                    <span>
-                        Cerrar sesión
-                    </span>
-
+                    <span>Cerrar sesión</span>
                 </a>
 
             </nav>
 
 
             <div class="sidebar-footer">
-
                 <p>
                     Colegio Evangélico Bethania · San Pedro de Macorís
                 </p>
-
             </div>
 
         </aside>
 
 
         <!-- OVERLAY MÓVIL -->
-        <div
-            class="sidebar-overlay"
-            id="sidebar-overlay">
+        <div class="sidebar-overlay" id="sidebar-overlay">
         </div>
 
 
@@ -233,10 +154,10 @@
                 </div>
                 <div class="header-meta">
                     <span class="current-date" id="current-date"></span>
-                    <span class="view-tag">Vista de Administración</span>
+                    <span class="view-tag" id="view-tag">Vista de Administración</span>
                 </div>
                 <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
-                <i data-lucide="menu"></i>
+                    <i data-lucide="menu"></i>
                 </button>
             </header>
 
@@ -262,10 +183,7 @@
                     </div>
 
 
-                    <button
-                        class="btn-primary"
-                        id="open-grade-modal"
-                        type="button">
+                    <button class="btn-primary" id="open-grade-modal" type="button">
 
                         <i data-lucide="pencil"></i>
 
@@ -279,9 +197,7 @@
 
 
                 <!-- MENSAJE GENERAL -->
-                <div
-                    class="page-message"
-                    id="page-message">
+                <div class="page-message" id="page-message">
                 </div>
 
 
@@ -292,8 +208,7 @@
 
                     <div class="table-container">
 
-                        <table
-                            class="data-table grades-table">
+                        <table class="data-table grades-table">
 
                             <thead>
 
@@ -341,9 +256,7 @@
 
 
                     <!-- ESTADO VACÍO -->
-                    <div
-                        class="empty-state"
-                        id="empty-state">
+                    <div class="empty-state" id="empty-state">
 
                         <i data-lucide="clipboard-list"></i>
 
@@ -371,9 +284,7 @@
     <!-- =========================================================
          MODAL REGISTRAR NOTA
          ========================================================= -->
-    <div
-        class="modal-overlay"
-        id="grade-modal">
+    <div class="modal-overlay" id="grade-modal">
 
         <div class="modal-card">
 
@@ -393,11 +304,7 @@
                 </div>
 
 
-                <button
-                    type="button"
-                    class="modal-close"
-                    id="close-grade-modal"
-                    aria-label="Cerrar">
+                <button type="button" class="modal-close" id="close-grade-modal" aria-label="Cerrar">
 
                     <i data-lucide="x"></i>
 
@@ -417,9 +324,7 @@
                             Estudiante
                         </label>
 
-                        <select
-                            id="grade-student"
-                            required>
+                        <select id="grade-student" required>
 
                             <option value="">
                                 Selecciona un estudiante
@@ -437,9 +342,7 @@
                             Trimestre
                         </label>
 
-                        <select
-                            id="grade-term"
-                            required>
+                        <select id="grade-term" required>
 
                             <option value="">
                                 Selecciona un trimestre
@@ -469,13 +372,7 @@
                             Calificación
                         </label>
 
-                        <input
-                            type="number"
-                            id="grade-value"
-                            min="0"
-                            max="100"
-                            placeholder="0 - 100"
-                            required>
+                        <input type="number" id="grade-value" min="0" max="100" placeholder="0 - 100" required>
 
                         <small class="field-help">
                             La calificación permitida es de 0 a 100.
@@ -511,28 +408,21 @@
 
 
                 <!-- MENSAJE -->
-                <div
-                    class="form-message"
-                    id="grade-form-message">
+                <div class="form-message" id="grade-form-message">
                 </div>
 
 
                 <!-- ACCIONES -->
                 <div class="modal-actions">
 
-                    <button
-                        type="button"
-                        class="btn-secondary"
-                        id="cancel-grade">
+                    <button type="button" class="btn-secondary" id="cancel-grade">
 
                         Cancelar
 
                     </button>
 
 
-                    <button
-                        type="submit"
-                        class="btn-primary">
+                    <button type="submit" class="btn-primary">
 
                         Guardar
 
@@ -550,9 +440,7 @@
     <!-- =========================================================
          TOAST
          ========================================================= -->
-    <div
-        class="toast"
-        id="toast">
+    <div class="toast" id="toast">
 
         <div class="toast-icon">
 

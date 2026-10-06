@@ -1051,42 +1051,6 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
 
-    /* =====================================================
-       PERFIL DEMOSTRATIVO
-       ===================================================== */
-
-    const profile =
-        document.getElementById(
-            "profile-select"
-        );
-
-
-    if (profile) {
-
-        profile.value = "Tutor";
-
-
-        profile.addEventListener(
-            "change",
-            () => {
-
-                if (
-                    profile.value !==
-                    "Tutor"
-                ) {
-
-                    profile.value =
-                        "Tutor";
-
-
-                    showMessage(
-                        "El Portal tutor está disponible para el perfil Tutor.",
-                        "error"
-                    );
-                }
-            }
-        );
-    }
 
 
     /* =====================================================

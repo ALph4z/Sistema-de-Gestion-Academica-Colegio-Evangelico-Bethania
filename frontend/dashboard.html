@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,12 +8,14 @@
     <!-- Google Fonts & Iconos de Lucide -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="fecha.js"></script>
     <script src="navegacion.js"></script>
     <link rel="stylesheet" href="dashboard.css">
 </head>
+
 <body>
     <div class="sidebar-overlay" id="sidebar-overlay"></div>
 
@@ -30,8 +33,8 @@
 
                 <div class="profile-selector-box">
                     <label class="profile-label">Perfil demostrativo</label>
-                    <select class="profile-select">
-                        <option value="Administración" selected>Administración</option>
+                    <select class="profile-select" id="roleSelect" name="rol">
+                        <option value="Administración">Administración</option>
                         <option value="Docente">Docente</option>
                         <option value="Tutor">Tutor</option>
                     </select>
@@ -39,39 +42,46 @@
             </div>
 
             <nav class="sidebar-nav">
-                <a href="dashboard.html" class="nav-item active">
+                <a href="dashboard.html" class="nav-item active" id="nav-dashboard">
                     <i data-lucide="layout-grid"></i>
                     <span>Panel principal</span>
                 </a>
-                <a href="estudiantes-tutores.html" class="nav-item">
+
+                <a href="estudiantes-tutores.html" class="nav-item" id="nav-estudiantes">
                     <i data-lucide="users"></i>
                     <span>Estudiantes y tutores</span>
                 </a>
-                <a href="matricula-expediente.html" class="nav-item">
+
+                <a href="matricula-expediente.html" class="nav-item" id="nav-matricula">
                     <i data-lucide="file-check"></i>
                     <span>Matrícula y documentos</span>
                 </a>
-                <a href="cajas-pagos.html" class="nav-item">
+
+                <a href="cajas-pagos.html" class="nav-item" id="nav-caja">
                     <i data-lucide="wallet"></i>
                     <span>Caja y pagos</span>
                 </a>
-                <a href="configuracion-academica.html" class="nav-item">
+
+                <a href="configuracion-academica.html" class="nav-item" id="nav-configuracion">
                     <i data-lucide="sliders"></i>
                     <span>Configuración académica</span>
                 </a>
-                <a href="carga-docente.html" class="nav-item">
+
+                <a href="carga-docente.html" class="nav-item" id="nav-carga">
                     <i data-lucide="monitor-play"></i>
                     <span>Carga docente</span>
                 </a>
-                <a href="calificaciones.html" class="nav-item">
+
+                <a href="calificaciones.html" class="nav-item" id="nav-calificaciones">
                     <i data-lucide="award"></i>
                     <span>Calificaciones</span>
                 </a>
-                <a href="portal-tutor.html" class="nav-item">
+
+                <a href="portal-tutor.html" class="nav-item" id="nav-portal-tutor">
                     <i data-lucide="heart"></i>
                     <span>Portal tutor</span>
                 </a>
-                
+
                 <!-- BOTÓN CERRAR SESIÓN -->
                 <a href="index.html" class="nav-item logout-item">
                     <i data-lucide="log-out"></i>
@@ -94,10 +104,10 @@
                 </div>
                 <div class="header-meta">
                     <span class="current-date" id="current-date"></span>
-                    <span class="view-tag">Vista de Administración</span>
+                    <span class="view-tag" id="view-tag">Vista de Administración</span>
                 </div>
                 <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
-                <i data-lucide="menu"></i>
+                    <i data-lucide="menu"></i>
                 </button>
             </header>
 
@@ -105,7 +115,8 @@
             <section class="welcome-bar">
                 <div>
                     <h2 class="welcome-title">Buenos días, equipo Bethania</h2>
-                    <p class="welcome-desc">Una vista clara del proceso de matrícula, la documentación y la gestión académica del período vigente.</p>
+                    <p class="welcome-desc">Una vista clara del proceso de matrícula, la documentación y la gestión
+                        académica del período vigente.</p>
                 </div>
                 <a href="matricula-expediente.html" class="btn-primary">
                     <i data-lucide="user-plus"></i>
@@ -160,7 +171,7 @@
                         <h3 class="card-title">Matrículas recientes</h3>
                         <a href="#" class="link-action">Ver matrículas</a>
                     </div>
-                    
+
                     <div class="table-container">
                         <table class="data-table">
                             <thead>
@@ -205,19 +216,20 @@
                 <section class="content-card quick-actions-section">
                     <div class="card-header-simple">
                         <h3 class="card-title">Acciones rápidas</h3>
-                        <p class="card-subtitle">Accede a los procesos administrativos más utilizados durante la jornada.</p>
+                        <p class="card-subtitle">Accede a los procesos administrativos más utilizados durante la
+                            jornada.</p>
                     </div>
 
                     <div class="actions-list">
-                        
+
                         <a href="cajas-pagos.html" class="btn-primary">
                             <span>Registrar cobro</span>
                         </a>
-                        
+
                         <a href="calificaciones.html" class="btn-primary">
                             <i data-lucide="pencil"></i>
                             <span>Registrar calificaciones</span>
-                        </a>                        
+                        </a>
                     </div>
                 </section>
             </div>
@@ -230,4 +242,5 @@
 
     </script>
 </body>
+
 </html>

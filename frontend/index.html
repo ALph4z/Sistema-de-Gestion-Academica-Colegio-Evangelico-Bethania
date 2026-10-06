@@ -12,6 +12,7 @@
         href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="login.css">
+    <script src="login.js"></script>
 </head>
 
 <body>
@@ -50,17 +51,19 @@
 
                     <h2 class="card-title">Bienvenido a EduBethania</h2>
 
-                    <form class="login-form" action="dashboard.html" method="GET">
-                        <label for="roleSelect" class="form-label">Selecciona tu perfil de acceso</label>
+                    <form class="login-form" id="loginForm">
+                        <label for="roleSelect" class="form-label">
+                            Selecciona tu perfil de acceso
+                        </label>
+
                         <div class="select-wrapper">
-                            <select id="roleSelect" name="rol" required>
-                                <option value="Administración" selected>Administración</option>
+                            <select class="profile-select" id="roleSelect" name="rol" required>
+                                <option value="Administración">Administración</option>
                                 <option value="Docente">Docente</option>
                                 <option value="Tutor">Tutor</option>
                             </select>
                         </div>
 
-                        <!-- Mantiene el action en el form pero restaura la clase original de tu CSS -->
                         <button type="submit" class="submit-btn">→</button>
                     </form>
                     <p class="card-footer-text">Acceso demostrativo para la comunidad educativa.</p>
@@ -69,7 +72,6 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
 </body>
 
 </html>

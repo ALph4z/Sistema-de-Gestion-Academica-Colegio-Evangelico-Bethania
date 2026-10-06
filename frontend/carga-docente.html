@@ -11,8 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
         rel="stylesheet">
 
     <!-- Fecha, hora y año escolar -->
@@ -48,8 +47,8 @@
                 <div class="profile-selector-box">
                     <label class="profile-label">Perfil demostrativo</label>
 
-                    <select class="profile-select">
-                        <option value="Administración" selected>Administración</option>
+                    <select class="profile-select" id="roleSelect" name="rol">
+                        <option value="Administración">Administración</option>
                         <option value="Docente">Docente</option>
                         <option value="Tutor">Tutor</option>
                     </select>
@@ -59,42 +58,42 @@
 
             <nav class="sidebar-nav">
 
-                <a href="dashboard.html" class="nav-item">
+                <a href="dashboard.html" class="nav-item" id="nav-dashboard">
                     <i data-lucide="layout-grid"></i>
                     <span>Panel principal</span>
                 </a>
 
-                <a href="estudiantes-tutores.html" class="nav-item">
+                <a href="estudiantes-tutores.html" class="nav-item" id="nav-estudiantes">
                     <i data-lucide="users"></i>
                     <span>Estudiantes y tutores</span>
                 </a>
 
-                <a href="matricula-expediente.html" class="nav-item">
+                <a href="matricula-expediente.html" class="nav-item" id="nav-matricula">
                     <i data-lucide="file-check"></i>
                     <span>Matrícula y documentos</span>
                 </a>
 
-                <a href="cajas-pagos.html" class="nav-item">
+                <a href="cajas-pagos.html" class="nav-item" id="nav-caja">
                     <i data-lucide="wallet"></i>
                     <span>Caja y pagos</span>
                 </a>
 
-                <a href="configuracion-academica.html" class="nav-item">
+                <a href="configuracion-academica.html" class="nav-item" id="nav-configuracion">
                     <i data-lucide="sliders"></i>
                     <span>Configuración académica</span>
                 </a>
 
-                <a href="carga-docente.html" class="nav-item active">
+                <a href="carga-docente.html" class="nav-item active" id="nav-carga">
                     <i data-lucide="monitor-play"></i>
                     <span>Carga docente</span>
                 </a>
 
-                <a href="calificaciones.html" class="nav-item">
+                <a href="calificaciones.html" class="nav-item" id="nav-calificaciones">
                     <i data-lucide="award"></i>
                     <span>Calificaciones</span>
                 </a>
 
-                <a href="portal-tutor.html" class="nav-item">
+                <a href="portal-tutor.html" class="nav-item" id="nav-portal-tutor">
                     <i data-lucide="heart"></i>
                     <span>Portal tutor</span>
                 </a>
@@ -128,10 +127,10 @@
                 </div>
                 <div class="header-meta">
                     <span class="current-date" id="current-date"></span>
-                    <span class="view-tag">Vista de Administración</span>
+                    <span class="view-tag" id="view-tag">Vista de Administración</span>
                 </div>
                 <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
-                <i data-lucide="menu"></i>
+                    <i data-lucide="menu"></i>
                 </button>
             </header>
 
@@ -224,11 +223,7 @@
                     </p>
                 </div>
 
-                <button
-                    type="button"
-                    class="modal-close"
-                    id="close-assignment-modal"
-                    aria-label="Cerrar">
+                <button type="button" class="modal-close" id="close-assignment-modal" aria-label="Cerrar">
                     <i data-lucide="x"></i>
                 </button>
 
@@ -330,25 +325,18 @@
 
 
                 <!-- MENSAJE DEL FORMULARIO -->
-                <div
-                    class="form-message"
-                    id="assignment-form-message">
+                <div class="form-message" id="assignment-form-message">
                 </div>
 
 
                 <!-- ACCIONES -->
                 <div class="modal-actions">
 
-                    <button
-                        type="button"
-                        class="btn-secondary"
-                        id="cancel-assignment">
+                    <button type="button" class="btn-secondary" id="cancel-assignment">
                         Cancelar
                     </button>
 
-                    <button
-                        type="submit"
-                        class="btn-primary">
+                    <button type="submit" class="btn-primary">
                         Guardar asignación
                     </button>
 
@@ -380,11 +368,7 @@
                     </p>
                 </div>
 
-                <button
-                    type="button"
-                    class="modal-close"
-                    id="close-status-modal"
-                    aria-label="Cerrar">
+                <button type="button" class="modal-close" id="close-status-modal" aria-label="Cerrar">
                     <i data-lucide="x"></i>
                 </button>
 
@@ -406,17 +390,11 @@
 
             <div class="modal-actions">
 
-                <button
-                    type="button"
-                    class="btn-secondary"
-                    id="cancel-status">
+                <button type="button" class="btn-secondary" id="cancel-status">
                     Cancelar
                 </button>
 
-                <button
-                    type="button"
-                    class="btn-primary"
-                    id="confirm-status">
+                <button type="button" class="btn-primary" id="confirm-status">
                     Confirmar
                 </button>
 
