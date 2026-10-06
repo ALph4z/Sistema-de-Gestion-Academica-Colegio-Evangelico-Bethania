@@ -4,11 +4,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const sidebar = document.querySelector(".sidebar");
     const overlay = document.getElementById("sidebar-overlay");
 
-    if (!menuToggle || !sidebar || !overlay) {
-        return;
-    }
-
-    // Abrir menú
+    if (menuToggle && sidebar && overlay) {
+         // Abrir menú
     menuToggle.addEventListener("click", function () {
 
         sidebar.classList.add("open");
@@ -47,6 +44,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
     });
+    }
+
+   
 
 // ==========================================
 // CONTROL DE PERFILES
