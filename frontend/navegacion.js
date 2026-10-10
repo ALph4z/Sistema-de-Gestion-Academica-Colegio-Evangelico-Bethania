@@ -80,6 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (navConfiguracion) navConfiguracion.style.display = "";
             if (navCarga) navCarga.style.display = "";
             if (navCalificaciones) navCalificaciones.style.display = "";
+            if (navPortalTutor) navPortalTutor.style.display = "";
 
             if (viewTag) {
                 viewTag.textContent = "Vista de Administración";
